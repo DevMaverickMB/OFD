@@ -1,0 +1,75 @@
+.page-banner {
+  position: relative;
+  background: var(--secondary-color);
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.page-banner .banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(18, 27, 33, 0.87) 30%, rgba(18, 27, 33, 0.2) 100%);
+}
+
+.page-banner .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-banner .banner-title {
+  color: #fff;
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.page-banner .breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  background: var(--white);
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.page-banner .breadcrumb a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.page-banner .breadcrumb a:hover {
+  color: var(--primary-color);
+}
+
+.page-banner .breadcrumb .separator {
+  color: var(--primary-color);
+  margin: 0 10px;
+}
+
+.page-banner .breadcrumb .current {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .page-banner .banner-title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .page-banner {
+    padding: 60px 0;
+  }
+}

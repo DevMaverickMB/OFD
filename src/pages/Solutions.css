@@ -1,0 +1,141 @@
+.solutions-page {
+  overflow-x: hidden;
+}
+
+.solutions-intro {
+  padding: 80px 0;
+  background: var(--white);
+  text-align: center;
+}
+
+.solutions-intro .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.solutions-intro h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.solutions-intro p {
+  font-size: 16px;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+.solutions-grid-section {
+  padding: 0 0 80px;
+  background: var(--white);
+}
+
+.solutions-grid-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.solution-card {
+  background: var(--white);
+  padding: 35px 25px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  transition: all 0.3s;
+}
+
+.solution-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(var(--primary-rgb), 0.18);
+  transform: translateY(-5px);
+}
+
+.solution-card.highlighted {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.solution-card.highlighted h3,
+.solution-card.highlighted p {
+  color: #fff;
+}
+
+.solution-card.highlighted .read-more {
+  color: #fff;
+}
+
+.solution-card.highlighted:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.solution-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(var(--primary-rgb), 0.12);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.solution-card.highlighted .solution-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.solution-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+}
+
+.solution-card p {
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: gap 0.3s;
+}
+
+.read-more:hover {
+  gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .solutions-intro h2 {
+    font-size: 24px;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr;
+  }
+}

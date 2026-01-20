@@ -1,0 +1,35 @@
+/*
+  Runtime “bridge” styles.
+  This file is safe to keep even when you add the licensed Metary CSS.
+  It focuses on aligning our existing component classnames to Metary-like primitives.
+*/
+
+/* Improve default link/button feel */
+
+a.btn-style1,
+a.btn-style2 {
+  text-decoration: none;
+}
+
+/* Header: slightly tighter + theme-consistent */
+
+.header-top {
+  padding: 14px 0;
+}
+
+.nav-bar {
+  position: relative;
+}
+
+/* Page banner: more Metary-like breadcrumb pill */
+
+.page-banner .breadcrumb {
+  box-shadow: 0 10px 30px rgba(18, 28, 34, 0.08);
+}
+
+/* Forms: align focus ring to primary */
+
+input:focus,
+textarea:focus {
+  outline: none;
+}

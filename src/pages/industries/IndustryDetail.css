@@ -1,0 +1,359 @@
+.industry-detail-page {
+  min-height: 100vh;
+}
+
+.industry-detail-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1400px;
+  margin: 100px auto;
+  padding: 0 40px;
+}
+
+/* Sidebar Styles */
+.industry-sidebar {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sidebar-section {
+  background: #F8F8F8;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.sidebar-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}
+
+.sidebar-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 25px;
+  color: var(--secondary-color);
+  text-decoration: none;
+  background: var(--white);
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.sidebar-link:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar-link:hover {
+  transform: translateY(-2px);
+  color: var(--primary-color);
+  padding-left: 25px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.sidebar-link.active {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+.sidebar-link i {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.sidebar-material {
+  background: #F8F8F8;
+  color: var(--secondary-color);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.sidebar-material h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.material-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  background: var(--white);
+  color: var(--text-color);
+  padding: 15px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.material-link:last-child {
+  margin-bottom: 0;
+}
+
+.material-link:hover {
+  background: var(--white);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.material-link i {
+  font-size: 20px;
+  color: var(--secondary-color);
+}
+
+.material-link:hover i {
+  color: var(--primary-color);
+}
+
+.sidebar-cta {
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 40px 20px;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.cta-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.cta-icon i {
+  font-size: 32px;
+  color: var(--secondary-color);
+}
+
+.sidebar-cta h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.cta-phone {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.cta-phone:hover {
+  color: var(--primary-color);
+}
+
+.cta-subtitle {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Main Content Styles */
+.industry-content {
+  flex: 1;
+}
+
+.industry-hero-image {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.industry-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.industry-intro {
+  margin-bottom: 50px;
+}
+
+.industry-intro h1 {
+  font-size: 42px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.industry-intro .subtitle {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.industry-intro .description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.challenges-section,
+.how-platform-section,
+.why-choose-section {
+  margin-bottom: 60px;
+}
+
+.challenges-section h2,
+.how-platform-section h2,
+.why-choose-section h2 {
+  font-size: 32px;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-description {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 35px;
+}
+
+.challenges-grid,
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.challenge-item,
+.benefit-item {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.challenge-item:hover,
+.benefit-item:hover {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-5px);
+}
+
+.challenge-icon,
+.benefit-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-icon i,
+.benefit-icon i {
+  font-size: 28px;
+  color: var(--white);
+}
+
+.challenge-content h3,
+.benefit-content h3 {
+  font-size: 18px;
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.challenge-content ul,
+.benefit-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.challenge-content li,
+.benefit-content li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.why-choose-list {
+  padding-left: 30px;
+}
+
+.why-choose-list > li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-color);
+  margin-bottom: 15px;
+}
+
+.why-choose-list ul {
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .industry-detail-container {
+    flex-direction: column;
+  }
+
+  .industry-sidebar {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .challenges-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .industry-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-intro h1 {
+    font-size: 32px;
+  }
+
+  .challenges-section h2,
+  .how-platform-section h2,
+  .why-choose-section h2 {
+    font-size: 26px;
+  }
+
+  .industry-hero-image {
+    height: 250px;
+  }
+
+  .challenge-item,
+  .benefit-item {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+

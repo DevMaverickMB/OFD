@@ -1,0 +1,125 @@
+.resources-page {
+  overflow-x: hidden;
+}
+
+.resources-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.resources-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.resources-card {
+  background: var(--white);
+  border-radius: 12px;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.resources-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.resources-card-image {
+  position: relative;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.resources-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 15, 30, 0.9) 0%, rgba(0, 15, 30, 0.4) 50%, transparent 100%);
+  z-index: 0;
+}
+
+.resources-card-title {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ffffff;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.resources-card-footer {
+  padding: 20px 30px;
+  background: #fff;
+  border-top: 1px solid var(--gray-200);
+}
+
+.resources-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.resources-link i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.resources-card:hover .resources-link {
+  color: var(--primary-color);
+}
+
+.resources-card:hover .resources-link i {
+  transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resources-card-image {
+    height: 280px;
+    padding: 25px;
+  }
+
+  .resources-card-title {
+    font-size: 24px;
+  }
+
+  .resources-card-footer {
+    padding: 15px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-card-image {
+    height: 220px;
+    padding: 20px;
+  }
+
+  .resources-card-title {
+    font-size: 20px;
+  }
+}

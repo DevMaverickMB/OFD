@@ -1,0 +1,108 @@
+/* Integrations Carousel Styling */
+.integrations-carousel-wrapper {
+    margin-top: 60px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Add fade mask on edges for style */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.integrations-carousel-track {
+    display: flex;
+    width: max-content;
+    gap: 80px;
+    /* Generous spacing between items */
+    animation: scroll-carousel 50s linear infinite;
+    padding: 20px 0;
+    /* Space for hover effects if any */
+    margin-bottom: 20px;
+}
+
+/* Pause animation on hover for better UX */
+.integrations-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-carousel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.333%);
+        /* Scroll 1/3 of the items (one full set) */
+    }
+}
+
+.integration-carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    /* Space between logo and text */
+    flex-shrink: 0;
+    width: 140px;
+    /* Fixed width to ensure consistency */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.integration-carousel-item:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-logo-container {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Grayscale by default, color on hover - optional, user didn't explicitly ask but it matches "reference image fashion" often used */
+    /* filter: grayscale(40%); */
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.carousel-logo-container img.logo-large {
+    max-width: 120%;
+    max-height: 120%;
+    width: 70px;
+    /* Specific override for large logos */
+}
+
+.carousel-logo-container i {
+    font-size: 40px;
+    color: #a0a0a0;
+    transition: all 0.3s ease;
+}
+
+.integration-carousel-item:hover .carousel-logo-container img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.integration-carousel-item:hover .carousel-logo-container i {
+    color: var(--primary-color);
+}
+
+.carousel-item-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    text-align: center;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+.integration-carousel-item:hover .carousel-item-name {
+    color: var(--secondary-color);
+}

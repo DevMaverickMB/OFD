@@ -1,0 +1,206 @@
+/* Reviews Section specific styles to match reference */
+.reviews-section-container {
+    position: relative;
+    width: 100%;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px 0 60px 0;
+    overflow: visible;
+    background: #fff;
+    /* White background for the section */
+}
+
+/* Background image container - starts from left margin, extends to right edge */
+.reviews-bg-image {
+    position: absolute;
+    top: -50px;
+    left: 5%;
+    width: 95%;
+    height: 640px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.reviews-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+
+.reviews-content-box {
+    position: relative;
+    z-index: 3;
+    background-color: #121b21;
+    width: 640px;
+    height: 600px;
+    max-width: 100%;
+    margin-right: 8%;
+    color: #fff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews-main-content {
+    padding: 56px 56px;
+    flex: 1;
+    /* Fill remaining space */
+    overflow: hidden;
+    /* Prevent content overflow from affecting layout */
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-icon-large {
+    font-size: 100px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    line-height: 27.2px;
+    font-weight: 900;
+}
+
+.reviews-heading {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 48px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+/* Underlined Text Styling */
+.reviews-heading .underlined-text {
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.reviews-heading .underlined-text::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    height: 6px;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+/* Carousel content area with fixed layout */
+.review-carousel-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slide animation for review text */
+.review-text-wrapper {
+    flex: 1;
+    overflow: hidden;
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.reviews-content-box .review-text {
+    font-size: 17.6px;
+    line-height: 27.2px;
+    font-weight: 500;
+    color: #ffffff !important;
+    font-style: normal;
+    margin-bottom: 0;
+    margin-top: 1%
+}
+
+/* Reviewer info - animates with text, positioned lower */
+.review-text-wrapper .reviewer-info {
+    margin-top: 40px;
+    /* More space between text and reviewer info */
+}
+
+.reviewer-name {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 900;
+    color: var(--primary-color);
+}
+
+.reviewer-role {
+    font-size: 16px;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+/* Orange bottom bar with dots */
+/* Orange bottom bar with dots */
+.reviews-footer-bar {
+    height: 70px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: auto;
+    /* Anchor footer to bottom of the fixed-height box */
+}
+
+.review-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.review-dot.active {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+    .reviews-bg-image {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section-container {
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    .reviews-content-box {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .reviews-main-content {
+        padding: 35px 25px;
+    }
+
+    .reviews-heading {
+        font-size: 24px;
+    }
+}

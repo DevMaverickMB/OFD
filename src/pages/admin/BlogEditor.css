@@ -1,0 +1,351 @@
+/* BlogEditor.css - Block Based Overhaul */
+
+.editor-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f9fafb;
+}
+
+.editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.editor-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+/* Form Layout */
+.editor-form {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 30px;
+}
+
+.form-main {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    min-height: 600px;
+}
+
+.form-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.sidebar-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color, #ff6b00);
+    box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
+}
+
+/* Block Editor Area */
+.blocks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.editor-block {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    padding: 15px;
+}
+
+.editor-block:hover {
+    border-color: #d1d5db;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.editor-block.dragging {
+    opacity: 0.5;
+    background: #f3f4f6;
+}
+
+/* Block Controls */
+.block-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.drag-handle {
+    cursor: grab;
+    color: #9ca3af;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.drag-handle:hover {
+    color: #6b7280;
+}
+
+.block-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.delete-block-btn {
+    color: #ef4444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.delete-block-btn:hover {
+    background: #fee2e2;
+}
+
+/* Block Content Styles */
+.block-content textarea {
+    width: 100%;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 16px;
+    line-height: 1.6;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.block-heading-input {
+    width: 100%;
+    font-weight: 700;
+    color: #111827;
+    border: none;
+    background: transparent;
+    padding: 8px 0;
+}
+
+.block-heading-input:focus {
+    outline: none;
+    border-bottom: 2px solid var(--primary-color, #ff6b00);
+}
+
+.h2-block {
+    font-size: 24px;
+}
+
+.h3-block {
+    font-size: 20px;
+}
+
+.block-quote-wrapper {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: #f9fafb;
+    border-radius: 6px;
+    border-left: 4px solid var(--primary-color, #ff6b00);
+}
+
+.block-quote-wrapper textarea {
+    background: transparent;
+    border: none;
+    padding: 0;
+    font-style: italic;
+    color: #4b5563;
+}
+
+/* Add Block Menu */
+.add-block-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #e5e7eb;
+    text-align: center;
+}
+
+.add-block-trigger {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.add-block-trigger:hover {
+    background: #f9fafb;
+    border-color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #ff6b00);
+}
+
+.block-options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block-option {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.block-option:hover {
+    border-color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #ff6b00);
+    background: rgba(255, 107, 0, 0.05);
+}
+
+.block-option svg {
+    font-size: 20px;
+}
+
+/* Sidebar Extras */
+.save-btn {
+    width: 100%;
+    background: var(--primary-color, #ff6b00);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.save-btn:hover {
+    background: #e64a19;
+}
+
+.save-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.image-upload-preview {
+    width: 100%;
+    height: 150px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-upload-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px;
+    border: 1px dashed #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #6b7280;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.upload-btn:hover {
+    border-color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #ff6b00);
+}
+
+@media (max-width: 900px) {
+    .editor-form {
+        grid-template-columns: 1fr;
+    }
+}
