@@ -22,10 +22,9 @@ const BlogDetail = () => {
             setLoading(true);
             try {
                 // Fetch current blog
-                // SIMPLIFIED QUERY DEBUGGING: Removed comments(count) temporarily to rule out RLS/Relation issues
                 const { data: currentBlog, error } = await supabase
                     .from('blogs')
-                    .select('*')
+                    .select('*, comments(count)')
                     .eq('slug', slug)
                     .eq('is_published', true)
                     .single();
@@ -42,7 +41,8 @@ const BlogDetail = () => {
                         .eq('is_published', true)
                         .order('created_at', { ascending: false })
                         .limit(1)
-                        .single();
+
+                        .maybeSingle();
                     setPrevPost(prev);
 
                     const { data: next } = await supabase
@@ -52,7 +52,7 @@ const BlogDetail = () => {
                         .eq('is_published', true)
                         .order('created_at', { ascending: true })
                         .limit(1)
-                        .single();
+                        .maybeSingle();
                     setNextPost(next);
                 }
 
@@ -81,10 +81,8 @@ const BlogDetail = () => {
                     allPosts.forEach(p => {
                         if (p.tags) {
                             p.tags.forEach(t => {
-                                if (t) { // Check if tag exists
-                                    const tag = t.trim();
-                                    tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-                                }
+                                const tag = t.trim();
+                                tagCounts[tag] = (tagCounts[tag] || 0) + 1;
                             });
                         }
                     });
@@ -93,7 +91,6 @@ const BlogDetail = () => {
 
             } catch (error) {
                 console.error('Error fetching blog details:', error);
-                setBlog(null); // Ensure blog is null on error
             } finally {
                 setLoading(false);
             }
@@ -103,6 +100,31 @@ const BlogDetail = () => {
             fetchData();
         }
     }, [slug]);
+
+    // Trigger scroll animations after content loads
+    useEffect(() => {
+        if (!loading && blog) {
+            const timer = setTimeout(() => {
+                const elements = document.querySelectorAll('.scroll-animate:not(.animated)');
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const delay = entry.target.dataset.delay || 0;
+                            setTimeout(() => {
+                                entry.target.classList.add('animated');
+                            }, delay);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                elements.forEach(el => observer.observe(el));
+
+                return () => observer.disconnect();
+            }, 100);
+            return () => clearTimeout(timer);
+        }
+    }, [loading, blog]);
 
     if (loading) {
         return (
@@ -114,10 +136,9 @@ const BlogDetail = () => {
 
     if (!blog) {
         return (
-            <div className="blog-not-found" style={{ padding: '100px 20px', textAlign: 'center' }}>
+            <div className="blog-not-found">
                 <h2>Blog Post Not Found</h2>
-                <p>We couldn't load the post. It might not exist or there was an error.</p>
-                <Link to="/blog" className="back-link" style={{ marginTop: '20px', display: 'inline-block', color: 'var(--primary-color)' }}>Return to Blog</Link>
+                <Link to="/blog" className="back-link">Return to Blog</Link>
             </div>
         );
     }
