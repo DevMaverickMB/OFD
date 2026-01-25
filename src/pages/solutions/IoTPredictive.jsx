@@ -1,6 +1,11 @@
+import solIoT from '../../assets/solutions/sol_iot_v2_1767969366429.png';
 import { Link } from 'react-router-dom';
 import PageBanner from '../../components/PageBanner';
 import './SolutionDetail.css';
+import logo from '../../assets/logo.svg';
+import sidebarPromoBg from '../../assets/sidebar_promo_bg.png';
+import sidebarCtaBg from '../../assets/sidebar_cta_support_bg.png';
+import AnimationObserver from '../../components/AnimationObserver';
 
 const IoTPredictive = () => {
     const solutions = [
@@ -16,6 +21,7 @@ const IoTPredictive = () => {
 
     return (
         <div className="solution-detail-page">
+            <AnimationObserver />
             <PageBanner
                 title="IoT and Predictive Maintenance"
                 breadcrumbs={[
@@ -48,194 +54,282 @@ const IoTPredictive = () => {
                         </Link>
                     </div>
 
-                    <div className="sidebar-cta">
-                        <div className="cta-icon">
-                            <i className="fas fa-phone-alt"></i>
+                    
+                    <div className="sidebar-promo" style={{backgroundImage: `url(${sidebarPromoBg})`}}>
+                        <div className="promo-content">
+                            <div className="promo-logo">
+                                <img src={logo} alt="OpsFlo" />
+                            </div>
+                            <h3>Optimizing Operations across Industries</h3>
+                            <p>Discover how we're improving quality of Industries</p>
+                            <Link to="/industries" className="promo-btn">
+                                <i className="fas fa-arrow-right"></i> READ MORE
+                            </Link>
                         </div>
-                        <h3>Got any Questions? Call us Today!</h3>
-                        <a href="tel:+18133986692" className="cta-phone">+1 (813) 398-6692</a>
-                        <p className="cta-subtitle">Schedule Anytime</p>
+                    </div>
+
+                    <div className="sidebar-cta">
+                        <div className="sidebar-cta-image" style={{backgroundImage: `url(${sidebarCtaBg})`}}></div>
+                        <div className="sidebar-cta-content">
+                            <div className="cta-icon">
+                                <i className="fas fa-headset"></i>
+                            </div>
+                            <h3>How Can We Help?</h3>
+                            <a href="tel:+44123456789" className="cta-phone">
+                                <i className="fas fa-phone-alt"></i>
+                                (+44) 123 456 789
+                            </a>
+                            <a href="mailto:addyour@emailhere" className="cta-email">
+                                <i className="fas fa-envelope"></i>
+                                addyour@emailhere
+                            </a>
+                        </div>
                     </div>
                 </aside>
 
                 <main className="solution-content">
-                    <div className="solution-hero-image">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop" alt="IoT and Predictive Maintenance" />
+                    <div className="solution-hero-image scroll-animate" data-animate="blur-fade">
+                        <img src={solIoT} alt="IoT and Predictive Maintenance" />
                     </div>
 
-                    <section className="solution-intro">
-                        <h1>IoT and Predictive Maintenance</h1>
-                        <p className="subtitle">Leverage Smart Sensors to Predict Failures Before They Happen</p>
-                        <p className="description">
-                            Unplanned equipment failures are the most costly disruptions in oilfield operations; resulting in
-                            lost production, emergency repairs, and safety risks. Orriun Atlas integrates with IoT sensors
-                            and leverages advanced analytics to monitor equipment health in real-time, predict potential
-                            failures, and schedule maintenance before problems occur, maximizing uptime and equipment longevity.
+                    <section className="metary-intro-text scroll-animate" data-animate="fade-up">
+                        <h1>Revolutionize Your Operations with IoT and Predictive Maintenance</h1>
+                        <p>
+                            In an industry where equipment downtime can cost millions per day, predictive maintenance is the game-changer.
+                            Move from reactive "fix-it-when-it-breaks" models to intelligent, data-driven maintenance strategies.
+                            Orriun Atlas leverages IoT data to predict failures before they happen, ensuring continuous operation and
+                            maximizing asset performance.
+                        </p>
+                        <p>
+                            We bring the data to you. Connect your field assets to the Orriun Atlas cloud to gain real-time visibility into machine health, usage, and efficiency from anywhere in the world.
                         </p>
                     </section>
 
-                    <section className="challenges-section">
-                        <h2>Challenges with Reactive Maintenance</h2>
-                        <p className="section-description">
-                            Traditional maintenance approaches leave oilfield operators vulnerable to costly equipment failures:
-                        </p>
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginBottom: '20px' }}>Features of Orriun Atlas’s IoT and Predictive Maintenance Solution</h3>
 
-                        <div className="challenges-grid">
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-times-circle"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Unexpected Breakdowns</h3>
-                                    <ul>
-                                        <li>Critical equipment fails without warning, halting operations for hours or days.</li>
-                                        <li>Emergency repairs cost 3-5x more than planned maintenance.</li>
-                                    </ul>
-                                </div>
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-satellite-dish" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
                             </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-money-bill-wave"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Lost Production Revenue</h3>
-                                    <ul>
-                                        <li>Every hour of downtime translates to significant revenue loss.</li>
-                                        <li>Cascade effects impact downstream operations and customer commitments.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-wrench"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Over-Maintenance Waste</h3>
-                                    <ul>
-                                        <li>Calendar-based maintenance replaces parts that still have useful life.</li>
-                                        <li>Unnecessary maintenance activities consume resources and cause disruption.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-user-injured"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Safety Risks</h3>
-                                    <ul>
-                                        <li>Failing equipment can create dangerous conditions for workers.</li>
-                                        <li>Pressure, temperature, and vibration anomalies often go undetected.</li>
-                                    </ul>
-                                </div>
+                            <div className="box-content">
+                                <h3>Real-Time Asset Monitoring</h3>
+                                <p>Collect data from sensors installed on pumps, trucks, and tanks. Monitor critical parameters like temperature, pressure, vibration, and flow rates in real-time.</p>
                             </div>
                         </div>
-                    </section>
-
-                    <section className="how-platform-section">
-                        <h2>How Orriun Atlas Enables Predictive Maintenance</h2>
-                        <p className="section-description">
-                            Orriun Atlas combines IoT connectivity with AI-powered analytics to transform how you maintain
-                            equipment:
-                        </p>
-
-                        <div className="benefits-grid">
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-wifi"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>IoT Sensor Integration</h3>
-                                    <ul>
-                                        <li>Connect to vibration, temperature, pressure, and flow sensors.</li>
-                                        <li>Support for major industrial sensor protocols and manufacturers.</li>
-                                    </ul>
-                                </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-exclamation-circle" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
                             </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-chart-area"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Real-Time Monitoring</h3>
-                                    <ul>
-                                        <li>Continuous data streaming from equipment across all locations.</li>
-                                        <li>Customizable dashboards show equipment health at a glance.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-magic"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>AI-Powered Predictions</h3>
-                                    <ul>
-                                        <li>Machine learning models detect patterns that precede failures.</li>
-                                        <li>Predictive alerts give days or weeks of warning before breakdowns.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-calendar-check"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Automated Work Order Creation</h3>
-                                    <ul>
-                                        <li>Predictive alerts automatically generate maintenance work orders.</li>
-                                        <li>Integration with scheduling ensures timely preventive action.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-history"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Equipment Health History</h3>
-                                    <ul>
-                                        <li>Complete historical data for trend analysis and reporting.</li>
-                                        <li>Track equipment performance over time to optimize replacement decisions.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-exclamation-triangle"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Threshold Alerts</h3>
-                                    <ul>
-                                        <li>Instant notifications when parameters exceed safe operating limits.</li>
-                                        <li>Escalation workflows ensure critical alerts receive immediate attention.</li>
-                                    </ul>
-                                </div>
+                            <div className="box-content">
+                                <h3>Predictive Alerts</h3>
+                                <p>Get notified instantly when equipment deviates from normal operating ranges. Avoid catastrophic failures with early warnings sent directly to your phone.</p>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <section className="why-choose-section">
-                        <h2>Why Choose Orriun Atlas for Predictive Maintenance?</h2>
-                        <p className="section-description">
-                            Orriun Atlas delivers significant ROI through reduced downtime and optimized maintenance:
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-calendar-alt" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Automated Maintenance Scheduling</h3>
+                                <p>Trigger work orders automatically based on actual usage hours or condition data, rather than arbitrary calendar dates.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-search-dollar" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Energy Efficiency Analysis</h3>
+                                <p>Monitor fuel consumption (diesel/LNG) and power usage across your fleet. Identify inefficiencies to reduce operational costs and carbon footprint.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-shield-alt" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Mobile Connectivity</h3>
+                                <p>Access live asset data from the field via mobile app. empower technicians with real-time insights for faster diagnostics.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-project-diagram" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Centralized Dashboard</h3>
+                                <p>View the health of your entire operation on a single pane of glass. Visualize trends and KPIs to make smarter strategic decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-plug" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Energy Efficiency Insights</h3>
+                                <p>Optimize energy consumption across your facilities and fleets. Track usage patterns to lower utility costs.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-cogs" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Remote Diagnostics</h3>
+                                <p>Troubleshoot issues remotely before dispatching a technician. Reduce truck rolls and increase first-time fix rates.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginTop: '40px', marginBottom: '20px' }}>Problems Orriun Atlas's IoT and Predictive Maintenance Solves</h3>
+
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-stopwatch" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Unplanned Downtime</h3>
+                                <p>Equipment failure stops production and costs money. Predict failures before they happen to keep your operations running smoothly.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-tools" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>High Maintenance Costs</h3>
+                                <p>Reduce unnecessary preventative maintenance. Service equipment only when it actually needs it, extending asset life and saving parts.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-eye-slash" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Blind Spots</h3>
+                                <p>Operating without real-time data is like driving blindfolded. Illuminate your operations with granular data visibility from sensor to boardroom.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-clipboard-list" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Compliance Challenges</h3>
+                                <p>Regulatory agencies demand data. Automate environmental and equipment reporting to easily meet compliance standards without manual effort.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-user-clock" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Inefficient Resource Allocation</h3>
+                                <p>Don't waste skilled labor on routine checks. Direct your technicians exactly where they are needed most based on critical asset health data.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-database" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Data Overload</h3>
+                                <p>Data is useless if you can't understand it. Our platform turns raw sensor streams into actionable insights that drive business value.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginTop: '40px', marginBottom: '20px' }}>Why Choose Orriun Atlas for IoT and Predictive Maintenance?</h3>
+
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-bolt" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Powerful Analytics</h3>
+                                <p>Built on industry-leading algorithms that turn complex data into simple, clear instructions for your team.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-hand-holding-usd" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Immediate ROI</h3>
+                                <p>See returns in weeks, not years, by eliminating downtime and extending the life of your expensive capital assets.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-lock" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Security</h3>
+                                <p>Industrial-grade security ensures your operational data remains protected and private at all times.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-arrows-alt-h" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Scalability</h3>
+                                <p>Start small with critical assets and scale effortlessly to thousands of sensors as your needs grow.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-puzzle-piece" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Easy Integration</h3>
+                                <p>Compatible with standard industrial protocols (Modbus, MQTT) for seamless connection to your existing hardware.</p>
+                            </div>
+                        </div>
+                        {/* Empty box for alignment if needed, or flex handles it */}
+                    </div>
+
+                    <div className="metary-text-content scroll-animate" data-animate="fade-up" style={{ marginTop: '40px' }}>
+                        <p>
+                            Orriun Atlas is more than just software; it's a strategic partner in your digital transformation journey. We help you unlock the hidden value in your operational data, driving efficiency, safety, and profitability across your entire enterprise.
                         </p>
-                        <ul className="why-choose-list">
-                            <li>Reduce unplanned downtime by up to 50% with predictive analytics.</li>
-                            <li>Extend equipment lifespan by 20-30% through condition-based maintenance.</li>
-                            <li>Cut maintenance costs by 25% by eliminating unnecessary scheduled maintenance.</li>
-                            <li>Improve safety by detecting dangerous conditions before they cause incidents.</li>
-                            <li>Easy integration with existing sensor infrastructure and SCADA systems.</li>
-                        </ul>
-                    </section>
+                    </div>
+
+                    <div className="metary-checklist-section scroll-animate" data-animate="slide-up">
+                        <h3>Key Benefits Summary</h3>
+                        <div className="metary-checklist-grid">
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Reduce Unexpected Failures</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Lower Maintenance Costs</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Extend Asset Lifespan</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Improve Safety</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Optimize Resource Allocation</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Data-Driven Decisions</div>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>

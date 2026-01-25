@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
+import AnimationObserver from '../components/AnimationObserver';
 import drillingImg from '../assets/industries/drilling-contractors.png';
 import rentalsImg from '../assets/industries/equipment-rentals.png';
 import midstreamImg from '../assets/industries/mid-upstream.png';
@@ -51,6 +52,7 @@ const Industries = () => {
 
   return (
     <div className="industries-page">
+      <AnimationObserver />
       <PageBanner title="Industries" />
 
       {/* Industries Section - Same as Home Page */}
@@ -60,13 +62,19 @@ const Industries = () => {
             <span className="eyebrow-line"></span>
             <p className="eyebrow-text">Driving operational simplicity across industries</p>
           </div>
-          <h2 className="section-title">Powerful digital solutions for<br />diverse oilfield needs</h2>
+          <h2 className="section-title scroll-animate" data-animate="fade-up">Powerful digital solutions for<br />diverse oilfield needs</h2>
           <p className="section-subtitle scroll-animate" data-animate="fade-up" data-delay="100">
             Orriun Atlas's customizable platform, diverse modules, and seamless integration make it adaptable for various industries, offering streamlined operations, scalability, and real-time insights without the need for extensive training.
           </p>
           <div className="industries-grid">
             {industries.map((industry, index) => (
-              <Link to={industry.path} key={index} className="industry-card-link">
+              <Link
+                to={industry.path}
+                key={index}
+                className="industry-card-link scroll-animate"
+                data-animate="fade-up"
+                data-delay={index * 100}
+              >
                 <div className="industry-card">
                   <div className="industry-image">
                     <img src={industry.image} alt={industry.title} />

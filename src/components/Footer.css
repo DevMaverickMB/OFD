@@ -232,23 +232,53 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px;
-  height: 50px;
-  background: var(--primary-color);
-  color: var(--white);
-  border: none;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   z-index: 9999;
+  background: transparent;
+  padding: 0;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.progress-bg {
+  stroke: #121c22;
+  /* Specific dark tone matching footer/theme */
+}
+
+.progress-fill {
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.scroll-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .scroll-to-top.visible {
@@ -258,8 +288,11 @@
 }
 
 .scroll-to-top:hover {
-  background: #e65c00;
   transform: translateY(-5px);
+}
+
+.scroll-to-top i {
+  font-size: 16px;
 }
 
 

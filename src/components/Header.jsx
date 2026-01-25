@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import orriunAtlasLogo from '../assets/logo.svg';
 import wordmarkLogo from '../assets/Wordmark.svg';
@@ -9,7 +9,18 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'About Us', path: '/about' },
@@ -58,8 +69,15 @@ const Header = () => {
     setMobileDropdownOpen(mobileDropdownOpen === itemName ? null : itemName);
   };
 
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header className='header'>
+    <header className={`header ${isScrolled ? 'scrolled' : 'transparent'}`}>
       {/* Top Bar */}
       <div className='header-top'>
         <div className='container header-top-content'>
@@ -89,7 +107,7 @@ const Header = () => {
       {/* Main Navigation */}
       <div className='nav-bar'>
         <div className='container nav-container'>
-          <Link to='/' className='logo'>
+          <Link to='/' className='logo' onClick={handleLogoClick}>
             <img src={orriunAtlasLogo} alt='Orriun Atlas Logo' className='logo-image' />
             <img src={wordmarkLogo} alt='Orriun Atlas Wordmark' className='logo-wordmark' />
           </Link>

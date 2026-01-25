@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
+import BookDemoModal from '../components/BookDemoModal';
 import './About.css';
 import '../pages/Home.css'; // Import Home CSS for reused sections
 import operationsBannerBg from '../assets/operations_banner_bg.png';
@@ -9,9 +10,15 @@ import operationsBannerBg from '../assets/operations_banner_bg.png';
 import drillingImg from '../assets/industries/drilling-contractors.png';
 import rentalsImg from '../assets/industries/equipment-rentals.png';
 import midstreamImg from '../assets/industries/mid-upstream.png';
-
+import { cloudinaryVideos } from '../config/cloudinaryVideos';
+import introEngineerImg from '../assets/about/intro_engineer_inspecting.png';
+import introTeamImg from '../assets/about/intro_team_consulting.png';
+import oilbig from '../assets/about/oil_gas_stats_banner_big.png';
+import reviewsBgInterior from '../assets/about/reviews_bg_interior.png';
 
 const About = () => {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+
   // FAQ Logic
   const [openFaqIndex, setOpenFaqIndex] = useState(0); // Default first open
 
@@ -21,16 +28,16 @@ const About = () => {
 
   const faqs = [
     {
-      question: "Where can Orriun Atlas solutions be deployed?",
-      answer: "We offer versatile deployment options. Whether you need on-premise solutions for enhanced security or cloud-based deployment for flexibility and scalability, Orriun Atlas has you covered."
+      question: "Does Orriun Atlas work in offline environments?",
+      answer: "Absolutely. We adhere to a \"Mobile First, Offline First\" architecture. Field techs can access work orders, manuals, and compliance forms without internet, syncing automatically once connectivity is restored."
     },
     {
-      question: "How secure is Orriun Atlas?",
-      answer: "Security is our top priority. We employ enterprise-grade encryption and comply with all major industry standards to ensure your data is safe and protected at all times."
+      question: "How do you ensure data security?",
+      answer: "We utilize enterprise-grade encryption and cloud security protocols compliant with global energy standards, ensuring your sensitive operational data remains protected at all times."
     },
     {
-      question: "How do you verify the information?",
-      answer: "Our system uses multi-step verification processes combining automated checks with manual oversight to ensure the highest level of data accuracy and integrity."
+      question: "Can it integrate with our existing ERP?",
+      answer: "Yes, Orriun Atlas is designed to integrate seamlessly with your existing ERP systems, allowing for a smooth transition and minimal disruption to your workflow."
     }
   ];
 
@@ -39,28 +46,28 @@ const About = () => {
 
   const reviews = [
     {
-      text: "Before adopting Orriun Atlas, our operations were fragmented and slow. Now everything is centralized, transparent, and action-driven. Accountability is clear, and tasks actually move forward. It has completely transformed how our teams collaborate.",
-      name: "Daniel Whitmore",
-      role: "Operations Manager"
+      text: "Orriun Atlas didn’t just digitize our paperwork; it fundamentally changed how we forecast revenue. By connecting our field data directly to the boardroom, we slashed our Days Sales Outstanding (DSO) by 35% in the first quarter alone. It’s the single source of truth we’ve been missing.",
+      name: "James Caldwell",
+      role: "VP of Operations"
     },
     {
-      text: "Orriun Atlas has streamlined our workflows in ways we didn’t think were possible. Real-time visibility and data accuracy have helped us cut delays and make faster decisions across departments.",
-      name: "Emily Carter",
-      role: "Supply Chain Lead"
+      text: "The offline capabilities are the real deal. My guys are out in the Permian Basin with zero signal, and the app never crashes. They log inspections, tag assets, and sync up instantly when they hit the truck wifi. We’ve cut admin time by 10 hours a week per technician.",
+      name: "Michael \"Mac\" MacAllister",
+      role: "Director of Field Services"
     },
     {
-      text: "From scheduling to reporting, Orriun Atlas has removed friction from our daily operations. Our teams spend less time coordinating and more time executing. The impact on productivity has been immediate.",
+      text: "In our line of work, compliance isn't just a checkbox; it's life or death. Orriun Atlas forces mandatory safety steps before a work order can even be opened. It has completely automated our HSE audit trails and given me total peace of mind during inspections.",
       name: "Jason Miller",
-      role: "Regional Operations Head"
+      role: "Senior HSE Manager"
     },
     {
-      text: "What stood out most was how quickly our field teams adapted to Orriun Atlas. The platform is intuitive, powerful, and backed by an excellent support team. It’s now a critical part of our operations stack.",
-      name: "Lauren Patel",
-      role: "Field Operations Manager"
+      text: "We used to run on reactive maintenance, fixing things after they broke. Orriun Atlas gave us the asset visibility to switch to predictive maintenance. We’re catching equipment failures weeks before they happen, and our uptime has never been higher.",
+      name: "David Thorne",
+      role: "Asset Integrity Director"
     },
     {
-      text: "Orriun Atlas has given us the operational clarity we were missing. Planning, execution, and reporting are now seamlessly connected, helping us reduce errors and operate with confidence.",
-      name: "Robert Nguyen",
+      text: "I was dreading the integration with our legacy ERP, but the Orriun team made it seamless. The API is robust, and the data flows perfectly. It’s rare to find software this powerful that is actually intuitive enough for our roughnecks to use without complaining.",
+      name: "Robert Vance",
       role: "Project Controls Director"
     }
   ];
@@ -146,14 +153,14 @@ const About = () => {
     <div className="about-page">
       <PageBanner title="About Us" />
 
-      {/* Intro Section - Modern Construction */}
+      {/* Intro Section - Origin Story */}
       <section className="about-intro-section">
         <div className="container">
-          <div className="intro-text-col">
-            <span className="intro-label">- ABOUT US</span>
-            <h2>The dynamics progress in <span className="about-underlined-text">Oil & Gas sector</span></h2>
+          <div className="intro-text-col scroll-animate" data-animate="slide-right">
+            <span className="intro-label">- OUR ORIGIN</span>
+            <h2>Mastering the dynamics of <span className="about-underlined-text">Oil & Gas sector</span></h2>
             <p className="intro-description">
-              From investigation and creation to transportation and refining, we offer a large number of items and administrations that meet the extraordinary requirements of the oil and gas industry.
+              Generic field service tools fail in the harsh reality of the energy sector. Orriun Atlas was forged to close the gap between remote field operations and corporate decision-making. <br />We replace fragmented legacy systems and paper trails with a unified, intelligent platform designed specifically for the complexities of upstream, midstream, and downstream operations.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', marginTop: '30px' }}>
@@ -166,17 +173,17 @@ const About = () => {
             </div>
           </div>
 
-          <div className="intro-images-col">
+          <div className="intro-images-col scroll-animate" data-animate="slide-left">
             <div className="intro-img-wrapper tall">
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                alt="Oil and Gas Engineer"
+                src={oilbig}
+                alt="Field Service Engineer Validating Data"
               />
             </div>
             <div className="intro-img-wrapper short floating-animate">
               <img
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-                alt="Industrial Work"
+                src={introTeamImg}
+                alt="Field Team Consulting Onsite"
               />
             </div>
 
@@ -189,17 +196,36 @@ const About = () => {
       </section>
 
       {/* Stats Banner Section */}
-      <section className="stats-banner-section" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')` }}>
+      <section className="stats-banner-section">
+        {/* Background Video */}
+        <video
+          className="stats-video-bg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          onEnded={(e) => { e.target.currentTime = 0; e.target.play(); }}
+        >
+          <source src={cloudinaryVideos.bannerVideo} type="video/mp4" />
+        </video>
         <div className="stats-banner-overlay"></div>
-        <div className="container" style={{ justifyContent: 'flex-start', alignItems: 'flex-end', height: '400px', paddingBottom: '0' }}>
+        <div className="container">
           {/* Stats Boxes positioned at the bottom left */}
-          <div className="stat-item">
-            <span className="stat-number">426</span>
-            <span className="stat-label">Equipment Solutions</span>
+          <div className="stat-item scroll-animate" data-animate="slide-up" data-delay="0">
+            <span className="stat-number">20+</span>
+            <span className="stat-label">Years of Industry Expertise</span>
           </div>
-          <div className="stat-item dark">
-            <span className="stat-number">4K</span>
-            <span className="stat-label">Project Complete</span>
+          <div className="stat-item dark scroll-animate" data-animate="slide-up" data-delay="100">
+            <span className="stat-number">420+</span>
+            <span className="stat-label">Enterprise Assets Managed</span>
+          </div>
+          <div className="stat-item scroll-animate" data-animate="slide-up" data-delay="200">
+            <span className="stat-number">100%</span>
+            <span className="stat-label">Audit Trail Visibility</span>
+          </div>
+          <div className="stat-item dark scroll-animate" data-animate="slide-up" data-delay="300">
+            <span className="stat-number">3</span>
+            <span className="stat-label">Continents Deployed</span>
           </div>
         </div>
       </section>
@@ -207,19 +233,24 @@ const About = () => {
       {/* FAQ / Solutions Section */}
       <section className="about-faq-section">
         <div className="container">
-          <div className="faq-left-col">
-            <span className="faq-label">- FAQ</span>
-            <h2>Solutions for residentials & industries!</h2>
+          <div className="faq-left-col scroll-animate" data-animate="slide-right">
+            <span className="faq-label">- WHY ORRIUN ATLAS?</span>
+            <h2>Solves complex field service challenges simply.</h2>
             <p>
-              Construction shelter has you covered with services that are tough and true. We build new eras for new businesses.
+              Field technicians deal with low connectivity, hazardous environments, and complex machinery. Orriun Atlas simplifies their workflow, ensuring that critical data is captured accurately, whether they are on an offshore rig or in a corporate office.
             </p>
             <Link to="/services" className="learn-more-btn">
-              LEARN MORE
+              Explore Features
             </Link>
           </div>
           <div className="faq-right-col">
             {faqs.map((faq, index) => (
-              <div key={index} className="faq-accordion-item">
+              <div
+                key={index}
+                className="faq-accordion-item scroll-animate"
+                data-animate="slide-up"
+                data-delay={index * 100}
+              >
                 <button
                   className={`faq-accordion-header ${openFaqIndex === index ? 'active' : ''}`}
                   onClick={() => toggleFaq(index)}
@@ -245,17 +276,17 @@ const About = () => {
         <div className="operations-banner-overlay"></div>
         <div className="container">
           <div className="operations-banner-content">
-            <div className="operations-left">
+            <div className="operations-left scroll-animate" data-animate="slide-left">
               <div className="eyebrow-container-left">
                 <span className="eyebrow-line"></span>
                 <p className="eyebrow-text">Digital Transformation in Oil & Gas</p>
               </div>
-              <h2 className="operations-main-title">An Inevitable Shift in Operations</h2>
+              <h2 className="operations-main-title">The Future of Energy <span className="underlined-text">Operations is Digital</span></h2>
               <p className="operations-description">
-                The global oil and gas market is growing steadily, while digital transformation in the industry is expanding at a much faster pace. This shift is driving greater efficiency, cost reduction, and sustainability. As digital technologies increasingly shape operations, adopting digital transformation has become essential for oil and gas companies to remain competitive and future-ready.
+                The industry is shifting from reactive repairs to predictive maintenance. Digital transformation is no longer optional, it is the key to survival. Orriun Atlas empowers your workforce with the real-time insights needed to reduce downtime, ensure safety, and drive profitability in a volatile market.
               </p>
             </div>
-            <div className="operations-right">
+            <div className="operations-right scroll-animate" data-animate="slide-right" data-delay="200">
               <div className="operations-right-top">
                 <div className="operations-heading">
                   Let's discuss your<br />
@@ -282,14 +313,14 @@ const About = () => {
       <section className="reviews-section-container">
         <div
           className="reviews-bg-image"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')` }}
+          style={{ backgroundImage: `url(${reviewsBgInterior})` }}
         >
           <div className="reviews-overlay"></div>
         </div>
-        <div className="reviews-content-box">
+        <div className="reviews-content-box scroll-animate" data-animate="slide-up">
           <div className="reviews-main-content">
             <div className="quote-icon-large">"</div>
-            <div className="reviews-heading">What our happy client say about us</div>
+            <div className="reviews-heading">What our <span className="underlined-text">happy client</span> say about us</div>
 
             <div className="review-carousel-content">
               <div className="review-text-wrapper" key={currentReviewIndex}>
@@ -370,6 +401,29 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Call to Action Section */}
+      <section className="about-cta-section">
+        <div className="container scroll-animate" data-animate="slide-up">
+          <h2>Ready to Modernize Your Operations?</h2>
+          <p>Join the industry leaders trusting Orriun Atlas for their digital transformation.</p>
+          <div className="cta-buttons">
+            <button
+              className="cta-btn-primary"
+              onClick={() => setIsBookDemoOpen(true)}
+              style={{ cursor: 'pointer', fontFamily: 'inherit', fontSize: '16px' }}
+            >
+              Request a Demo
+            </button>
+            <Link to="/contact" className="cta-btn-secondary">Contact Sales</Link>
+          </div>
+        </div>
+      </section>
+
+      <BookDemoModal
+        isOpen={isBookDemoOpen}
+        onClose={() => setIsBookDemoOpen(false)}
+      />
     </div>
   );
 };

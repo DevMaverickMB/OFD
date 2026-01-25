@@ -65,7 +65,7 @@ const Contact = () => {
           <div className="contact-content">
             <div className="contact-info scroll-animate" data-animate="fade-up">
               <p className="section-label">— Reach out to us</p>
-              <h2>Have questions or want to know how Orriun Atlas can benefit your business?</h2>
+              <h2>Have questions or want to know how Orriun Atlas can <span className="underlined-text">benefit your business?</span></h2>
               <p className="contact-description">
                 Our team is just a message away, ready to assist with your needs.
               </p>

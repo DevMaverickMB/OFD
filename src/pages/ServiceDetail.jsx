@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { servicesData } from '../data/servicesData';
 import './ServiceDetail.css';
-import video1 from '../assets/video1.mp4';
+import { cloudinaryVideos } from '../config/cloudinaryVideos';
 
 const ServiceDetail = () => {
   const { serviceId } = useParams();
@@ -22,8 +22,15 @@ const ServiceDetail = () => {
     <div className="service-detail-page">
       {/* Hero Section with Video */}
       <section className="service-hero-section">
-        <video autoPlay muted loop className="hero-video">
-          <source src={video1} type="video/mp4" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hero-video"
+          onEnded={(e) => { e.target.currentTime = 0; e.target.play(); }}
+        >
+          <source src={cloudinaryVideos.heroVideo} type="video/mp4" />
         </video>
         <div className="hero-overlay"></div>
         <div className="container">

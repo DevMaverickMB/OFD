@@ -102,12 +102,12 @@ const QuestionCarousel = () => {
   return (
     <section className="question-carousel-section">
       <div className="container">
-        <h2 className="section-title">Orriun Atlas <span className="underlined-text">can answer</span></h2>
-        <p className="section-subtitle">
+        <h2 className="section-title scroll-animate" data-animate="fade-up">Orriun Atlas <span className="underlined-text">can answer</span></h2>
+        <p className="section-subtitle scroll-animate" data-animate="fade-up" data-delay="100">
           Our AI-powered platform is designed to address your most pressing operational questions and challenges.
         </p>
 
-        <div className="carousel-container">
+        <div className="carousel-container scroll-animate" data-animate="fade-up" data-delay="200">
           <button
             className="carousel-btn carousel-btn-prev"
             onClick={handlePrev}
@@ -149,23 +149,30 @@ const QuestionCarousel = () => {
         </div>
 
         <div className="carousel-indicators">
-          {faqCategories.map((_, index) => (
-            <button
-              key={index}
-              className={`indicator ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => {
-                if (!isTransitioning && index !== currentIndex) {
-                  setDirection(index > currentIndex ? 'next' : 'prev');
-                  setIsTransitioning(true);
-                  setTimeout(() => {
-                    setCurrentIndex(index);
-                    setIsTransitioning(false);
-                  }, 600);
-                }
-              }}
-              aria-label={`Go to question ${index + 1}`}
-            />
-          ))}
+          <div
+            className="carousel-indicators-track"
+            style={{
+              transform: `translateX(${(faqCategories.length * 18 / 2) - (currentIndex * 18 + 5)}px)`
+            }}
+          >
+            {faqCategories.map((_, index) => (
+              <button
+                key={index}
+                className={`indicator ${index === currentIndex ? 'active' : ''}`}
+                onClick={() => {
+                  if (!isTransitioning && index !== currentIndex) {
+                    setDirection(index > currentIndex ? 'next' : 'prev');
+                    setIsTransitioning(true);
+                    setTimeout(() => {
+                      setCurrentIndex(index);
+                      setIsTransitioning(false);
+                    }, 600);
+                  }
+                }}
+                aria-label={`Go to question ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

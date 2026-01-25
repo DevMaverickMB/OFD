@@ -95,13 +95,15 @@
 /* Hero Section */
 .hero-section {
   position: relative;
-  min-height: 85vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
   text-align: center;
   overflow: hidden;
+  padding-top: 130px;
+  /* Increased offset for fixed header */
 }
 
 .hero-video {

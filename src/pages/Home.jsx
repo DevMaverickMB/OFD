@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import QuestionCarousel from '../components/QuestionCarousel';
-import video1 from '../assets/video1.mp4';
+import { cloudinaryVideos } from '../config/cloudinaryVideos';
 import drillingImg from '../assets/industries/drilling-contractors.png';
 import rentalsImg from '../assets/industries/equipment-rentals.png';
 import midstreamImg from '../assets/industries/mid-upstream.png';
@@ -19,6 +19,7 @@ import solSafety from '../assets/solutions/sol_safety_1767969188568.png';
 import solReporting from '../assets/solutions/sol_reporting_v2_1767969401744.png';
 import solMobileApp from '../assets/solutions/sol_mobile_app_1767969229107.png';
 import operationsBannerBg from '../assets/operations_banner_bg.png';
+import reviewsBgInterior from '../assets/about/reviews_bg_interior.png';
 import IntegrationsCarousel from '../components/IntegrationsCarousel';
 import '../components/ReviewsSection.css';
 import './Home.css';
@@ -28,28 +29,28 @@ const Home = () => {
 
   const reviews = [
     {
-      text: "Before adopting Orriun Atlas, our operations were fragmented and slow. Now everything is centralized, transparent, and action-driven. Accountability is clear, and tasks actually move forward. It has completely transformed how our teams collaborate.",
-      name: "Daniel Whitmore",
-      role: "Operations Manager"
+      text: "Orriun Atlas didn’t just digitize our paperwork; it fundamentally changed how we forecast revenue. By connecting our field data directly to the boardroom, we slashed our Days Sales Outstanding (DSO) by 35% in the first quarter alone. It’s the single source of truth we’ve been missing.",
+      name: "James Caldwell",
+      role: "VP of Operations"
     },
     {
-      text: "Orriun Atlas has streamlined our workflows in ways we didn’t think were possible. Real-time visibility and data accuracy have helped us cut delays and make faster decisions across departments.",
-      name: "Emily Carter",
-      role: "Supply Chain Lead"
+      text: "The offline capabilities are the real deal. My guys are out in the Permian Basin with zero signal, and the app never crashes. They log inspections, tag assets, and sync up instantly when they hit the truck wifi. We’ve cut admin time by 10 hours a week per technician.",
+      name: "Michael \"Mac\" MacAllister",
+      role: "Director of Field Services"
     },
     {
-      text: "From scheduling to reporting, Orriun Atlas has removed friction from our daily operations. Our teams spend less time coordinating and more time executing. The impact on productivity has been immediate.",
+      text: "In our line of work, compliance isn't just a checkbox; it's life or death. Orriun Atlas forces mandatory safety steps before a work order can even be opened. It has completely automated our HSE audit trails and given me total peace of mind during inspections.",
       name: "Jason Miller",
-      role: "Regional Operations Head"
+      role: "Senior HSE Manager"
     },
     {
-      text: "What stood out most was how quickly our field teams adapted to Orriun Atlas. The platform is intuitive, powerful, and backed by an excellent support team. It’s now a critical part of our operations stack.",
-      name: "Lauren Patel",
-      role: "Field Operations Manager"
+      text: "We used to run on reactive maintenance, fixing things after they broke. Orriun Atlas gave us the asset visibility to switch to predictive maintenance. We’re catching equipment failures weeks before they happen, and our uptime has never been higher.",
+      name: "David Thorne",
+      role: "Asset Integrity Director"
     },
     {
-      text: "Orriun Atlas has given us the operational clarity we were missing. Planning, execution, and reporting are now seamlessly connected, helping us reduce errors and operate with confidence.",
-      name: "Robert Nguyen",
+      text: "I was dreading the integration with our legacy ERP, but the Orriun team made it seamless. The API is robust, and the data flows perfectly. It’s rare to find software this powerful that is actually intuitive enough for our roughnecks to use without complaining.",
+      name: "Robert Vance",
       role: "Project Controls Director"
     }
 
@@ -306,14 +307,21 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section">
-        <video autoPlay muted loop className="hero-video">
-          <source src={video1} type="video/mp4" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="hero-video"
+          onEnded={(e) => { e.target.currentTime = 0; e.target.play(); }}
+        >
+          <source src={cloudinaryVideos.heroVideo} type="video/mp4" />
         </video>
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <p className="hero-subtitle">OILFIELD OPERATIONS MANAGEMENT SYSTEM</p>
-            <h1>Oil and gas for a <br /> sustainable <span className="hero-tomorrow">tomorrow</span></h1>
+            <p className="hero-subtitle">FIELD OPERATIONS MANAGEMENT SYSTEM</p>
+            <h1>The intelligent <br /> operating system for <span className="hero-tomorrow">Oil and Gas</span></h1>
             {/* <h4>Your New Ops Assistant</h4> */}
             <Link to="/contact" className="btn-style1 hero-btn">
               GET STARTED
@@ -328,14 +336,20 @@ const Home = () => {
       {/* Industries Section */}
       <section className="industries-section">
         <div className="container">
-          <div className="eyebrow-container-center scroll-animate" data-animate="fade-up">
+          <div className="eyebrow-container-center scroll-animate" data-animate="clip-right">
             <span className="eyebrow-line"></span>
             <p className="eyebrow-text">Driving operational simplicity across industries</p>
           </div>
-          <h2 className="section-title">Powerful digital solutions for<br />diverse <span className="underlined-text">oilfield needs</span></h2>
+          <h2 className="section-title scroll-animate" data-animate="blur-fade" data-delay="100">Powerful digital solutions for<br />diverse <span className="underlined-text">oilfield needs</span></h2>
           <div className="industries-grid">
             {industries.map((industry, index) => (
-              <Link to={industry.path} key={index} className="industry-card-link">
+              <Link
+                to={industry.path}
+                key={index}
+                className="industry-card-link scroll-animate"
+                data-animate="skew-up"
+                data-delay={100 + (index * 100)}
+              >
                 <div className="industry-card">
                   <div className="industry-image">
                     <img src={industry.image} alt={industry.title} />
@@ -442,12 +456,12 @@ const Home = () => {
       {/* Solutions Section */}
       <section className="solutions-section">
         <div className="container">
-          <div className="eyebrow-container-center scroll-animate" data-animate="fade-up">
+          <div className="eyebrow-container-center scroll-animate" data-animate="clip-right">
             <span className="eyebrow-line"></span>
             <p className="eyebrow-text">From ground operations to executive decisions</p>
           </div>
-          <h2 className="section-title scroll-animate" data-animate="fade-up">Discover the range of <br />solutions <span className="underlined-text">we offer</span></h2>
-          <p className="section-subtitle scroll-animate" data-animate="fade-up" data-delay="100">
+          <h2 className="section-title scroll-animate" data-animate="blur-fade">Discover the range of <br />solutions <span className="underlined-text">we offer</span></h2>
+          <p className="section-subtitle scroll-animate" data-animate="slide-up" data-delay="100">
             Comprehensive oilfield management tools designed to streamline every aspect of your operations.
           </p>
           <div className="solutions-grid">
@@ -456,7 +470,7 @@ const Home = () => {
                 key={index}
                 to={solution.path}
                 className="solution-card scroll-animate"
-                data-animate="flip-in-x"
+                data-animate="scale-up-reveal"
                 data-delay={index * 100}
                 style={{
                   backgroundImage: `url(${solution.image})`,
@@ -517,7 +531,7 @@ const Home = () => {
         <div className="operations-banner-overlay"></div>
         <div className="container">
           <div className="operations-banner-content">
-            <div className="operations-left">
+            <div className="operations-left scroll-animate" data-animate="slide-left">
               <div className="eyebrow-container-left">
                 <span className="eyebrow-line"></span>
                 <p className="eyebrow-text">Digital Transformation in Oil & Gas</p>
@@ -527,7 +541,7 @@ const Home = () => {
                 The global oil and gas market is growing steadily, while digital transformation in the industry is expanding at a much faster pace. This shift is driving greater efficiency, cost reduction, and sustainability. As digital technologies increasingly shape operations, adopting digital transformation has become essential for oil and gas companies to remain competitive and future-ready.
               </p>
             </div>
-            <div className="operations-right">
+            <div className="operations-right scroll-animate" data-animate="slide-right" data-delay="200">
               <div className="operations-right-top">
                 <div className="operations-heading">
                   Let's discuss your<br />
@@ -565,11 +579,11 @@ const Home = () => {
       <section className="reviews-section-container">
         <div
           className="reviews-bg-image"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')` }}
+          style={{ backgroundImage: `url(${reviewsBgInterior})` }}
         >
           <div className="reviews-overlay"></div>
         </div>
-        <div className="reviews-content-box">
+        <div className="reviews-content-box scroll-animate" data-animate="slide-up">
           <div className="reviews-main-content">
             <div className="quote-icon-large">
               "

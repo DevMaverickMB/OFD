@@ -1,6 +1,11 @@
+import equipmentRentalsHero from '../../assets/industries/equipment-rentals.png';
 import { Link } from 'react-router-dom';
 import PageBanner from '../../components/PageBanner';
 import './IndustryDetail.css';
+import logo from '../../assets/logo.svg';
+import sidebarPromoBg from '../../assets/sidebar_promo_bg.png';
+import sidebarCtaBg from '../../assets/sidebar_cta_support_bg.png';
+import AnimationObserver from '../../components/AnimationObserver';
 
 const EquipmentRentals = () => {
   const industries = [
@@ -12,8 +17,11 @@ const EquipmentRentals = () => {
     { name: 'Wireline and Coil Tubing', path: '/industries/wireline-coil-tubing' }
   ];
 
+
+
   return (
     <div className="industry-detail-page">
+      <AnimationObserver />
       <PageBanner
         title="Equipment Rentals"
         breadcrumbs={[
@@ -38,6 +46,8 @@ const EquipmentRentals = () => {
             ))}
           </div>
 
+
+
           <div className="sidebar-material">
             <h3>Brochures</h3>
             <Link to="/contact" className="material-link">
@@ -46,330 +56,202 @@ const EquipmentRentals = () => {
             </Link>
           </div>
 
-          <div className="sidebar-cta">
-            <div className="cta-icon">
-              <i className="fas fa-phone-alt"></i>
+          <div className="sidebar-promo" style={{ backgroundImage: `url(${sidebarPromoBg})` }}>
+            <div className="promo-content">
+              <div className="promo-logo">
+                <img src={logo} alt="Orriun Atlas" />
+              </div>
+              <h3>Optimizing Operations with our Solutions</h3>
+              <p>Discover relationships with your business</p>
+              <Link to="/solutions" className="promo-btn">
+                <i className="fas fa-arrow-right"></i> READ MORE
+              </Link>
             </div>
-            <h3>Got any Questions? Call us Today!</h3>
-            <a href="tel:+18133986692" className="cta-phone">+1 (813) 398-6692</a>
-            <p className="cta-subtitle">Schedule Anytime</p>
           </div>
-        </aside>
+
+          <div className="sidebar-cta">
+            <div className="sidebar-cta-image" style={{ backgroundImage: `url(${sidebarCtaBg})` }}></div>
+            <div className="sidebar-cta-content">
+              <div className="cta-icon">
+                <i className="fas fa-headset"></i>
+              </div>
+              <h3>How Can We Help?</h3>
+              <a href="tel:+44123456789" className="cta-phone">
+                <i className="fas fa-phone-alt"></i>
+                (+44) 123 456 789
+              </a>
+              <a href="mailto:addyour@emailhere" className="cta-email">
+                <i className="fas fa-envelope"></i>
+                addyour@emailhere
+              </a>
+            </div>
+          </div>
+        </aside >
 
         <main className="industry-content">
-          <div className="industry-hero-image">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=400&fit=crop" alt="Equipment Rentals" />
+          <div className="industry-hero-image scroll-animate" data-animate="blur-fade">
+            <img src={equipmentRentalsHero} alt="Equipment Rentals" />
           </div>
 
-          <section className="industry-intro">
+          <section className="industry-intro scroll-animate" data-animate="fade-up">
             <h1>Equipment Rentals</h1>
-            <p className="subtitle">Operating Utilization and Efficiency with Orriun Atlas</p>
+            <p className="subtitle">Optimizing Utilization and Efficiency with Orriun Atlas</p>
             <p className="description">
-              Equipment rental companies are instrumental to the oil and gas industry, providing specialized tools,
-              machinery, and equipment vital for exploration, drilling, and production activities. These companies
-              face the challenge of managing vast inventories, ensuring equipment uptime, overseeing seamless logistics,
-              and maintaining accurate financial records. As the industry places value in efficiency and reliability,
-              equipment rental companies must operate at peak performance. However, they encounter significant hurdles
-              due to lack of realtime insight and seamless digital platforms. Orriun Atlas emerges as a comprehensive solution
-              built to address these complexities and unlock operational excellence.
+              Equipment rental companies are instrumental to the oil and gas industry, providing specialized tools, machinery, and equipment vital for exploration, drilling, and production activities. These companies face the challenge of managing vast inventories, ensuring equipment uptime, overseeing seamless logistics, and maintaining accurate financial records.
+            </p>
+            <p className="description" style={{ marginTop: '20px' }}>
+              Orriun Atlas emerges as a comprehensive solution built to address these complexities and unlock operational excellence.
             </p>
           </section>
 
-          <section className="challenges-section">
-            <h2>Challenges faced by TPE Equipment Rental Industry without Orriun Atlas</h2>
-            <p className="section-description">
-              The absence of digital solutions introduces significant inefficiencies and risks to equipment rental operations:
-            </p>
+          <h3 className="section-heading-dash" style={{ fontSize: '24px', fontWeight: '900', color: 'var(--secondary-color)', marginBottom: '20px' }}>Challenges Faced by Equipment Rental Companies without Orriun Atlas</h3>
+          <p className="section-description">Without a unified system, equipment rental companies often struggle with inventory visibility and utilization rates.</p>
 
-            <div className="challenges-grid">
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-box"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Asset Tracking Challenges</h3>
-                  <ul>
-                    <li>Lack of visibility into equipment (where) results in inefficient asset allocation and overdeployment.</li>
-                    <li>A sufficient tracking leads to confusion about availability, status (rented, idled, repaired, etc.)</li>
-                    <li>Insufficient tracking leads to missed rental opportunities.</li>
-                  </ul>
-                </div>
+          <div className="industry-feature-boxes scroll-animate" data-animate="fade-up">
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-map-marker-alt"></i>
               </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-clock"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Maintenance Inefficiencies</h3>
-                  <ul>
-                    <li>Manual or reactionary maintenance leads to unexpected breakdowns and increased downtime.</li>
-                    <li>Lack of predictive insights makes scheduling preventive maintenance difficult, resulting
-                      in lifetime of equipment and negatively impacting client relationship.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-file-invoice"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Manual Documentation and Billing</h3>
-                  <ul>
-                    <li>Paperwork-intensive processes for contracts, work orders, and invoices lead to errors and delays.</li>
-                    <li>Revenue collection is delayed due to inaccurate billing documentation.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-exclamation-triangle"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Compliance and Safety Risks</h3>
-                  <ul>
-                    <li>Ensuring equipment meets regulatory and safety standards becomes a daunting task without
-                      proper compliance tracking.</li>
-                    <li>Lack of historical safety logs increases liability and increases fines and penalties.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-shield-alt"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Compliance and Safety Risks</h3>
-                  <ul>
-                    <li>Equipment-related asset regulatory or physical compliance is challenging without
-                      integrated safety standards because they become a daunting task.</li>
-                    <li>Lack of historical safety documentation increases audit complexities and potentially
-                      even leads to fines.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-wrench"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Real-Time Asset Tracking</h3>
-                  <ul>
-                    <li>Digitize field tickets and automate invoicing for rental, storage, delivery, and other
-                      charges.</li>
-                    <li>Consolidate disparate data sources into a single, accessible platform that enables visibility
-                      into all rental assets.</li>
-                    <li>Enhanced payment-cycle time that reduces admin overhead.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-database"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Disorganized Inventory and Documentation</h3>
-                  <ul>
-                    <li>Lack of an availability inventory keeps pricing inventory keeps pricing current, which
-                      can inflate damage recovery during drop periods.</li>
-                    <li>Manually tracking equipment leads to incorrect availability, hindering responsiveness to
-                      market demand and losing prospective clients.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-tachometer-alt"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Predictive Maintenance and Uptime</h3>
-                  <ul>
-                    <li>Leverage IoT sensors provides real-time conditional asset data (e.g., wear, hours of operation),
-                      predictive maintenance tools.</li>
-                    <li>Schedule preventive maintenance intelligently to avoid unexpected breakdowns, minimise operational
-                      downtime, and reduce revenue loss.</li>
-                    <li>Improved communication increases uptime, which bolsters client satisfaction and trust.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-laptop"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Outdated Inventory Management</h3>
-                  <ul>
-                    <li>Cloud-based inventory keeps pricing inventory keeps which equip current, which may damage
-                      revenues during drop periods.</li>
-                    <li>Proactive inventory-level alarms based on rental demand ensure right-equipment stocking
-                      without over-committing capital expenditures.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="challenge-item">
-                <div className="challenge-icon">
-                  <i className="fas fa-laptop"></i>
-                </div>
-                <div className="challenge-content">
-                  <h3>Integrated Invoicing and Documentation</h3>
-                  <ul>
-                    <li>Achieve faster contract collection with automated invoicing tied to real-time utilization data.</li>
-                    <li>Accurate real-time utilization data eliminates pricing disputes between rental businesses and
-                      their customers.</li>
-                  </ul>
-                </div>
+              <div className="industry-box-content">
+                <h3>Asset Tracking Challenges</h3>
+                <p>Difficulty in locating assets in real-time leads to underutilization and lost revenue.</p>
+                <p>Inefficient logistics and routing increase transportation costs.</p>
               </div>
             </div>
-          </section>
-
-          <section className="why-choose-section">
-            <h2>Why Choose Orriun Atlas for Equipment Rentals?</h2>
-            <p className="section-description">
-              Orriun Atlas is designed to revolutionize equipment rental operations by providing a comprehensive, user-friendly
-              platform packed with real-time visibility, automation, and actionable insights. This enables more effective
-              training; and all affordable. By enabling rental companies to affordably By enable and cost-effectively:
-            </p>
-            <ul className="why-choose-list">
-              <li><strong>With Orriun Atlas</strong>, equipment rental businesses can streamline their operations, reduce costs,
-                and solidify their competitive position in a demand-driven, fast-paced market.</li>
-              <li><strong>With Orriun Atlas's equipment rental businesses</strong> can streamline their operations reduce costs,
-                and solidify will set new benchmarks for operational excellence, customer satisfaction, and scalable business growth.</li>
-            </ul>
-
-            <div className="benefits-grid">
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-chart-line"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>Real-Time Data Reporting and Analytics</h3>
-                  <ul>
-                    <li>Collect and analyse real-time performance data in real time through user-friendly and
-                      sharable formats to enable better forecasts and actionable insights.</li>
-                    <li>Provide stakeholders with up-to-date information essential for budget planning and resource
-                      optimization.</li>
-                  </ul>
-                </div>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-file-invoice-dollar"></i>
               </div>
-
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-users-cog"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>Seamless Integration with Existing Systems</h3>
-                  <ul>
-                    <li>Integrate Orriun Atlas effortlessly with existing ERP tools and systems like QuickBooks, etc.
-                      avoid operational workflow disruption.</li>
-                    <li>Eliminate data silos and ensure smooth collaboration across functional business operations.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-mobile-alt"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>Mobile Connectivity and Field Operations</h3>
-                  <ul>
-                    <li>Equip field techs with a user-friendly mobile app for equipment-time equipment access to
-                      order management and offline management.</li>
-                    <li>Enable seamless communication between field teams and office staff to ensure customers
-                      receive timely updates and field officers have critical information.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-shield-alt"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>End-to-End Operational Visibility</h3>
-                  <ul>
-                    <li>Orriun Atlas provides visibility over field operations and business-level insights that pinpoint
-                      inefficiencies and streamline decisions to optimize performance.</li>
-                    <li>Monitor asset progress, equipment status, and finances in real-time.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-user-shield"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>Integrated Compliance and Safety Management</h3>
-                  <ul>
-                    <li>Orriun Atlas's provides real-time over-level notifications with audit-ready log and
-                      customizable checkpoints to notify equipment complies with safety standards and regulations
-                      while safety track-and-monitor equipment are digitized.</li>
-                    <li>Minimize risks through comprehensive compliance checks from device delivery,
-                      inspection and financial measurement in real time.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-laptop"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>Enhanced Communication Through Mobile Connectivity</h3>
-                  <ul>
-                    <li>Ensure real-time updates with user-friendly mobile and desktop apps to seamlessly connect
-                      between field teams and administrative staff.</li>
-                    <li>Ensure your workers and clients stay updated, even from remote operational locations to
-                      maintain transparency and efficiency.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-file-pdf"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>Digitized Documentation and Invoicing</h3>
-                  <ul>
-                    <li>Automate rental invoicing and ensure contracts are linked electronically to improve admin oversight.</li>
-                    <li>Eliminate errors in invoices or usage and ensure disputes from clients caused by missing
-                      rental paperwork</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <i className="fas fa-check-circle"></i>
-                </div>
-                <div className="benefit-content">
-                  <h3>Actionable Data and Predictive Maintenance</h3>
-                  <ul>
-                    <li>Use predictive analytics to schedule maintenance before breakdowns occur, minimizing downtime
-                      and repairing costs.</li>
-                    <li>Enhance equipment lifecycle by prioritizing servicing schedules, which delivers timelines and
-                      client satisfaction.</li>
-                  </ul>
-                </div>
+              <div className="industry-box-content">
+                <h3>Manual Documentation and Billing</h3>
+                <p>Paper-based ticketing and invoicing processes are slow, error-prone, and delay cash flow.</p>
+                <p>Lost or illegible tickets lead to billing disputes and revenue leakage.</p>
               </div>
             </div>
-          </section>
+          </div>
+
+          <div className="industry-feature-boxes scroll-animate" data-animate="fade-up" style={{ marginTop: '-20px' }}>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-boxes"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Inventory Management Bottlenecks</h3>
+                <p>Lack of real-time visibility into inventory levels results in stockouts or overstocking.</p>
+                <p>Difficulty in tracking asset condition and history complicates maintenance planning.</p>
+              </div>
+            </div>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-cogs"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Maintenance and Downtime</h3>
+                <p>Reactive maintenance approaches lead to unexpected equipment failure and costly downtime.</p>
+                <p>Poor tracking of maintenance history reduces equipment resale value.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="industry-feature-boxes scroll-animate" data-animate="fade-up" style={{ marginTop: '-20px' }}>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-shield-alt"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Compliance and Safety Risks</h3>
+                <p>Managing safety certifications and compliance documentation manually increases liability.</p>
+                <p>Risk of penalties due to non-compliance with industry regulations.</p>
+              </div>
+            </div>
+            {/* Filler box to maintain grid structure if needed, or left empty/balanced */}
+          </div>
+
+          <h3 className="section-heading-dash" style={{ fontSize: '24px', fontWeight: '900', color: 'var(--secondary-color)', marginBottom: '20px', marginTop: '40px' }}>How Orriun Atlas Transforms Equipment Rental Operations</h3>
+          <p className="section-description">Orriun Atlas integrates all aspects of your rental operations into a single, easy-to-use platform, giving you control and confidence.</p>
+
+          <div className="industry-feature-boxes scroll-animate" data-animate="fade-up">
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-map-marked-alt"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Real-Time Asset Tracking</h3>
+                <p>Utilize GPS and IoT to track asset location and usage in real-time.</p>
+                <p>Optimize logistics and ensure assets are where they need to be, when they are needed.</p>
+              </div>
+            </div>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-file-invoice"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Streamlined Field Ticketing and Invoicing</h3>
+                <p>Digitize field tickets for instant approval and faster invoicing cycles.</p>
+                <p>Reduce billing errors and disputes with accurate, digital records.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="industry-feature-boxes scroll-animate" data-animate="fade-up" style={{ marginTop: '-20px' }}>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-warehouse"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Centralized Inventory Management</h3>
+                <p>Gain total visibility into inventory levels across all locations.</p>
+                <p>Make data-driven purchasing decisions and optimize stock levels.</p>
+              </div>
+            </div>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-tools"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Predictive Maintenance for Reliability</h3>
+                <p>Shift to predictive maintenance based on actual usage and condition monitoring.</p>
+                <p>Schedule service proactively to minimize downtime and extend asset life.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="industry-feature-boxes scroll-animate" data-animate="fade-up" style={{ marginTop: '-20px' }}>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-clipboard-check"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Integrated Compliance and Safety Tools</h3>
+                <p>Automate compliance checks and safety documentation.</p>
+                <p>Ensure all equipment meets regulatory standards before it leaves the yard.</p>
+              </div>
+            </div>
+            <div className="industry-box">
+              <div className="industry-box-icon-wrapper">
+                <i className="fas fa-mobile-alt"></i>
+              </div>
+              <div className="industry-box-content">
+                <h3>Mobile App Connectivity</h3>
+                <p>Empower field technicians with a mobile app for managing work orders and inventory on the go.</p>
+                <p>Enable offline access for remote operations, syncing data when connectivity is restored.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 className="section-heading-dash" style={{ fontSize: '24px', fontWeight: '900', color: 'var(--secondary-color)', marginBottom: '20px', marginTop: '40px' }}>Why Choose Orriun Atlas for Equipment Rentals?</h3>
+          <div className="metary-text-content scroll-animate" data-animate="fade-up">
+            <p>
+              Orriun Atlas is designed to handle the dynamic nature of the equipment rental business. Our platform scales with your growth, ensuring you have the tools to manage increasing inventory and operational complexity.
+            </p>
+            <p>
+              With Orriun Atlas, you gain a partner dedicated to your success. Experience improved utilization, reduced costs, and enhanced customer satisfaction through our state-of-the-art solution.
+            </p>
+          </div>
         </main>
-      </div>
-
-    </div>
+      </div >
+    </div >
   );
 };
 
 export default EquipmentRentals;
-

@@ -1,6 +1,11 @@
+import solTicketing from '../../assets/solutions/sol_ticketing_1767969119802.png';
 import { Link } from 'react-router-dom';
 import PageBanner from '../../components/PageBanner';
 import './SolutionDetail.css';
+import logo from '../../assets/logo.svg';
+import sidebarPromoBg from '../../assets/sidebar_promo_bg.png';
+import sidebarCtaBg from '../../assets/sidebar_cta_support_bg.png';
+import AnimationObserver from '../../components/AnimationObserver';
 
 const FieldTicketing = () => {
     const solutions = [
@@ -16,6 +21,7 @@ const FieldTicketing = () => {
 
     return (
         <div className="solution-detail-page">
+            <AnimationObserver />
             <PageBanner
                 title="Field Ticketing and Invoicing"
                 breadcrumbs={[
@@ -48,194 +54,263 @@ const FieldTicketing = () => {
                         </Link>
                     </div>
 
-                    <div className="sidebar-cta">
-                        <div className="cta-icon">
-                            <i className="fas fa-phone-alt"></i>
+                    
+                    <div className="sidebar-promo" style={{backgroundImage: `url(${sidebarPromoBg})`}}>
+                        <div className="promo-content">
+                            <div className="promo-logo">
+                                <img src={logo} alt="OpsFlo" />
+                            </div>
+                            <h3>Optimizing Operations across Industries</h3>
+                            <p>Discover how we're improving quality of Industries</p>
+                            <Link to="/industries" className="promo-btn">
+                                <i className="fas fa-arrow-right"></i> READ MORE
+                            </Link>
                         </div>
-                        <h3>Got any Questions? Call us Today!</h3>
-                        <a href="tel:+18133986692" className="cta-phone">+1 (813) 398-6692</a>
-                        <p className="cta-subtitle">Schedule Anytime</p>
+                    </div>
+
+                    <div className="sidebar-cta">
+                        <div className="sidebar-cta-image" style={{backgroundImage: `url(${sidebarCtaBg})`}}></div>
+                        <div className="sidebar-cta-content">
+                            <div className="cta-icon">
+                                <i className="fas fa-headset"></i>
+                            </div>
+                            <h3>How Can We Help?</h3>
+                            <a href="tel:+44123456789" className="cta-phone">
+                                <i className="fas fa-phone-alt"></i>
+                                (+44) 123 456 789
+                            </a>
+                            <a href="mailto:addyour@emailhere" className="cta-email">
+                                <i className="fas fa-envelope"></i>
+                                addyour@emailhere
+                            </a>
+                        </div>
                     </div>
                 </aside>
 
                 <main className="solution-content">
-                    <div className="solution-hero-image">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop" alt="Field Ticketing and Invoicing" />
+                    <div className="solution-hero-image scroll-animate" data-animate="blur-fade">
+                        <img src={solTicketing} alt="Field Ticketing and Invoicing" />
                     </div>
 
-                    <section className="solution-intro">
-                        <h1>Field Ticketing and Invoicing</h1>
-                        <p className="subtitle">Streamline Job Tracking and Billing with Digital Precision</p>
-                        <p className="description">
-                            In the fast-paced oilfield environment, accurate and timely billing is critical to cash flow and
-                            customer satisfaction. Traditional paper-based ticketing systems create delays, errors, and disputes
-                            that impact your bottom line. Orriun Atlas revolutionizes field ticketing with a fully digital
-                            solution that captures work details in real-time and converts them into accurate invoices instantly.
+                    <section className="metary-intro-text scroll-animate" data-animate="fade-up">
+                        <h1>Simplify Operations with Streamlined Field Ticketing and Invoicing</h1>
+                        <p>
+                            Processing field tickets for payment shouldn't be painful. With Orriun Atlas, you move from signed paper tickets to clean, accurate invoices in minutes, not weeks. Our platform connects your field crews directly to your finance team, ensuring every job is tracked, approved, and billed with zero billing leakage.
+                        </p>
+                        <p>
+                            Chart your course to better cash flow. By digitizing the ticketing process, you eliminate lost paperwork, reduce Days Sales Outstanding (DSO), and gain real-time visibility into your daily revenue.
                         </p>
                     </section>
 
-                    <section className="challenges-section">
-                        <h2>Challenges with Traditional Field Ticketing</h2>
-                        <p className="section-description">
-                            Paper-based and legacy ticketing systems create significant operational and financial challenges:
-                        </p>
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginBottom: '20px' }}>Features of Orriun Atlas’s Ticketing and Invoicing Solution</h3>
 
-                        <div className="challenges-grid">
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-exclamation-triangle"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Billing Delays and Errors</h3>
-                                    <ul>
-                                        <li>Paper tickets often get lost, damaged, or delayed in transit to the office.</li>
-                                        <li>Manual data entry introduces errors that lead to billing disputes.</li>
-                                    </ul>
-                                </div>
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-file-invoice" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
                             </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-hourglass-half"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Extended Billing Cycles</h3>
-                                    <ul>
-                                        <li>Days or weeks pass before field tickets reach accounting for processing.</li>
-                                        <li>Delayed invoicing negatively impacts cash flow and working capital.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-gavel"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Customer Disputes</h3>
-                                    <ul>
-                                        <li>Unclear documentation leads to disagreements over work performed and hours billed.</li>
-                                        <li>Lack of digital signatures and timestamps creates verification challenges.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-eye-slash"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Limited Visibility</h3>
-                                    <ul>
-                                        <li>Managers lack real-time insight into work being performed in the field.</li>
-                                        <li>Unable to track job progress or identify issues until after completion.</li>
-                                    </ul>
-                                </div>
+                            <div className="box-content">
+                                <h3>Digital Field Tickets</h3>
+                                <p>Field crews create and submit tickets digitally from any device, anywhere. Offline mode ensures work continues even without a signal.</p>
                             </div>
                         </div>
-                    </section>
-
-                    <section className="how-platform-section">
-                        <h2>How Orriun Atlas Transforms Field Ticketing</h2>
-                        <p className="section-description">
-                            Orriun Atlas provides a comprehensive digital ticketing platform that accelerates billing while
-                            improving accuracy and transparency:
-                        </p>
-
-                        <div className="benefits-grid">
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-mobile-alt"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Mobile Ticket Creation</h3>
-                                    <ul>
-                                        <li>Field technicians create digital tickets directly from their mobile devices.</li>
-                                        <li>Capture photos, notes, and equipment details in real-time.</li>
-                                    </ul>
-                                </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-clock" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
                             </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-signature"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Digital Signatures and Approvals</h3>
-                                    <ul>
-                                        <li>Obtain customer signatures on-site for immediate work verification.</li>
-                                        <li>Multi-level approval workflows ensure proper authorization.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-bolt"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Instant Invoice Generation</h3>
-                                    <ul>
-                                        <li>Automatic conversion of approved tickets to invoices within minutes.</li>
-                                        <li>Pre-configured pricing rules ensure accurate billing calculations.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-sync-alt"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>ERP Integration</h3>
-                                    <ul>
-                                        <li>Seamless synchronization with QuickBooks, SAP, and other accounting systems.</li>
-                                        <li>Eliminate duplicate data entry and reconciliation headaches.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-clock"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Time and Materials Tracking</h3>
-                                    <ul>
-                                        <li>Accurate capture of labor hours, equipment usage, and materials consumed.</li>
-                                        <li>GPS-verified timestamps prevent time inflation disputes.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-chart-line"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Revenue Analytics</h3>
-                                    <ul>
-                                        <li>Real-time dashboards show billing status, outstanding invoices, and revenue trends.</li>
-                                        <li>Identify high-performing services and customers for strategic focus.</li>
-                                    </ul>
-                                </div>
+                            <div className="box-content">
+                                <h3>Real-Time Job Tracking</h3>
+                                <p>Monitor job progress as it happens. Track labor hours, equipment usage, and materials in real-time for accurate job costing.</p>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <section className="why-choose-section">
-                        <h2>Why Choose Orriun Atlas for Field Ticketing?</h2>
-                        <p className="section-description">
-                            Orriun Atlas delivers measurable improvements to your billing operations and financial performance:
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-tags" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Client Master Price Books</h3>
+                                <p>Ensure every ticket is priced correctly with automated rate lookups based on client-specific contracts and price books.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-receipt" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Integrated Invoicing</h3>
+                                <p>Convert approved tickets into invoices with a single click. Seamlessly sync with your accounting software to speed up payment.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-magic" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Automated Invoicing</h3>
+                                <p>Configure rules to auto-generate invoices for recurring jobs or specific clients. Reduce manual data entry and human error.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-clipboard-check" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Custom Approval Workflows</h3>
+                                <p>Define multi-step approval paths to ensure tickets meet all internal and external requirements before they reach the client.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-mobile-alt" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Mobile Accessibility</h3>
+                                <p>Empower your field team. Technicians can capture signatures, attaching photos, and submit paperwork directly from their smartphones.</p>
+                            </div>
+                        </div>
+                        {/* Empty box for alignment if needed, or flex handles it */}
+                    </div>
+
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginTop: '40px', marginBottom: '20px' }}>Problems Orriun Atlas's Field Ticketing Solution Solves</h3>
+
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-hourglass-start" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Slow and Delayed Billing</h3>
+                                <p>Waiting for paper tickets drives up DSO. Our solution accelerates the billing cycle, getting invoices to customers days or weeks faster.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-file-invoice-dollar" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Disputed Invoices</h3>
+                                <p>Billing errors leads to rejected invoices and strained client relationships. Eliminate pricing mistakes with automated rate validation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-funnel-dollar" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Lost Revenue (Revenue Leakage)</h3>
+                                <p>Forget to bill for that extra valve or hour of labor? Capturing every billable item in the field ensures you get paid for every penny earned.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-clipboard-list" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Complex Compliance</h3>
+                                <p>Meeting rigorous client submission standards is tough. Customize ticket templates to match exact customer specs and avoid rejections.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-stop-circle" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Lack of Visibility</h3>
+                                <p>Don't wait until month-end to see your numbers. Track daily revenue production and job costs in real-time dashboard.</p>
+                            </div>
+                        </div>
+                        {/* Empty box for alignment if needed, or flex handles it */}
+                    </div>
+
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginTop: '40px', marginBottom: '20px' }}>Why Choose Orriun Atlas for Ticketing and Invoicing?</h3>
+
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-cogs" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Efficiency</h3>
+                                <p>Cut administrative overhead by up to 50% by automating data entry and approval processes.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-hand-holding-usd" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Cash Flow Improvement</h3>
+                                <p>Get paid faster. Reducing billing lag directly impacts your bottom line and improves working capital.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-check-double" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Accuracy</h3>
+                                <p>Build trust with precise, error-free invoices backed by digital field data and photos.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-eye" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Transparency</h3>
+                                <p>Give clients the clarity they demand. Customer portals allow them to view and approve tickets online instantly.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-chart-bar" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Scalability</h3>
+                                <p>Whether you have 5 crews or 500, our cloud-based platform grows with your business without missing a beat.</p>
+                            </div>
+                        </div>
+                        {/* Empty box for alignment if needed, or flex handles it */}
+                    </div>
+
+                    <div className="metary-text-content scroll-animate" data-animate="fade-up" style={{ marginTop: '40px' }}>
+                        <p>
+                            Orriun Atlas bridges the gap between the field and the office. We help you turn work into revenue faster, easier, and with total precision, so you can focus on growing your business.
                         </p>
-                        <ul className="why-choose-list">
-                            <li>Reduce billing cycles from weeks to hours with real-time ticket processing.</li>
-                            <li>Eliminate 95% of billing disputes through accurate digital documentation.</li>
-                            <li>Improve cash flow with faster invoice generation and delivery.</li>
-                            <li>Reduce administrative overhead by 60% through automation.</li>
-                            <li>Complete audit trail for compliance and dispute resolution.</li>
-                        </ul>
-                    </section>
+                    </div>
+
+                    <div className="metary-checklist-section scroll-animate" data-animate="slide-up">
+                        <h3>Our work benefits</h3>
+                        <div className="metary-checklist-grid">
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Instant Invoice Generation</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Eliminate Billing Disputes</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Shorten Billing Cycles</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Accurate Time & Materials</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Real-time Revenue Analytics</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Seamless ERP Integration</div>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>

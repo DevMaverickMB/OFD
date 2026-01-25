@@ -2,9 +2,11 @@
 .reviews-section-container {
     position: relative;
     width: 100%;
-    min-height: 550px;
+    min-height: 660px;
+    /* Increased to accommodate the layout */
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    /* Changed from center to allow precise top positioning */
     justify-content: flex-end;
     padding: 20px 0 60px 0;
     overflow: visible;
@@ -43,6 +45,8 @@
     height: 600px;
     max-width: 100%;
     margin-right: 8%;
+    margin-top: 40px;
+    /* Position box so dark section ends at 590px (640px - 50px) */
     color: #fff;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     display: flex;

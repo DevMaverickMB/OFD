@@ -1,6 +1,11 @@
+import solInventory from '../../assets/solutions/sol_inventory_1767969154407.png';
 import { Link } from 'react-router-dom';
 import PageBanner from '../../components/PageBanner';
 import './SolutionDetail.css';
+import logo from '../../assets/logo.svg';
+import sidebarPromoBg from '../../assets/sidebar_promo_bg.png';
+import sidebarCtaBg from '../../assets/sidebar_cta_support_bg.png';
+import AnimationObserver from '../../components/AnimationObserver';
 
 const InventoryManagement = () => {
     const solutions = [
@@ -16,6 +21,7 @@ const InventoryManagement = () => {
 
     return (
         <div className="solution-detail-page">
+            <AnimationObserver />
             <PageBanner
                 title="Inventory and Parts Management"
                 breadcrumbs={[
@@ -48,193 +54,282 @@ const InventoryManagement = () => {
                         </Link>
                     </div>
 
-                    <div className="sidebar-cta">
-                        <div className="cta-icon">
-                            <i className="fas fa-phone-alt"></i>
+                    
+                    <div className="sidebar-promo" style={{backgroundImage: `url(${sidebarPromoBg})`}}>
+                        <div className="promo-content">
+                            <div className="promo-logo">
+                                <img src={logo} alt="OpsFlo" />
+                            </div>
+                            <h3>Optimizing Operations across Industries</h3>
+                            <p>Discover how we're improving quality of Industries</p>
+                            <Link to="/industries" className="promo-btn">
+                                <i className="fas fa-arrow-right"></i> READ MORE
+                            </Link>
                         </div>
-                        <h3>Got any Questions? Call us Today!</h3>
-                        <a href="tel:+18133986692" className="cta-phone">+1 (813) 398-6692</a>
-                        <p className="cta-subtitle">Schedule Anytime</p>
+                    </div>
+
+                    <div className="sidebar-cta">
+                        <div className="sidebar-cta-image" style={{backgroundImage: `url(${sidebarCtaBg})`}}></div>
+                        <div className="sidebar-cta-content">
+                            <div className="cta-icon">
+                                <i className="fas fa-headset"></i>
+                            </div>
+                            <h3>How Can We Help?</h3>
+                            <a href="tel:+44123456789" className="cta-phone">
+                                <i className="fas fa-phone-alt"></i>
+                                (+44) 123 456 789
+                            </a>
+                            <a href="mailto:addyour@emailhere" className="cta-email">
+                                <i className="fas fa-envelope"></i>
+                                addyour@emailhere
+                            </a>
+                        </div>
                     </div>
                 </aside>
 
                 <main className="solution-content">
-                    <div className="solution-hero-image">
-                        <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=400&fit=crop" alt="Inventory and Parts Management" />
+                    <div className="solution-hero-image scroll-animate" data-animate="blur-fade">
+                        <img src={solInventory} alt="Inventory and Parts Management" />
                     </div>
 
-                    <section className="solution-intro">
-                        <h1>Inventory and Parts Management</h1>
-                        <p className="subtitle">Maintain Control Over Every Part and Supply in Your Operation</p>
-                        <p className="description">
-                            Managing inventory across multiple warehouses, field trucks, and well sites is a constant challenge
-                            for oilfield operators. Stockouts delay critical jobs while excess inventory ties up capital.
-                            Orriun Atlas delivers comprehensive inventory management that ensures the right parts are always
-                            available where and when they're needed, optimizing costs and operational efficiency.
+                    <section className="metary-intro-text scroll-animate" data-animate="fade-up">
+                        <h1>Stay Ahead with Streamlined Inventory and Parts Management</h1>
+                        <p>
+                            Inefficient inventory management leads to costly downtime and wasted capital. Keep your operations
+                            running smoothly with Orriun Atlas. We provide real-time visibility into your stock levels, helping
+                            you maintain the right balance of critical spares without overstocking. Ensure your field crews
+                            always have the parts they need, when they need them.
+                        </p>
+                        <p>
+                            Trace every part from purchase to installation. Orriun Atlas gives you granular control over your supply chain, reducing shrinkage and ensuring accountability at every step of the process.
                         </p>
                     </section>
 
-                    <section className="challenges-section">
-                        <h2>Inventory Challenges in Oilfield Operations</h2>
-                        <p className="section-description">
-                            Without modern inventory management, oilfield companies face significant operational and financial challenges:
-                        </p>
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginBottom: '20px' }}>Features of Orriun Atlas’s Inventory and Parts Management Solution</h3>
 
-                        <div className="challenges-grid">
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-box-open"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Stockouts and Delays</h3>
-                                    <ul>
-                                        <li>Critical jobs delayed because parts aren't available when needed.</li>
-                                        <li>Emergency procurement at premium prices impacts profitability.</li>
-                                    </ul>
-                                </div>
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-search-location" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
                             </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-warehouse"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Excess Inventory</h3>
-                                    <ul>
-                                        <li>Overstocking ties up working capital in slow-moving parts.</li>
-                                        <li>Parts expire or become obsolete before they can be used.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-search"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Poor Visibility</h3>
-                                    <ul>
-                                        <li>Unable to track parts across multiple locations in real-time.</li>
-                                        <li>Field truck inventory often unknown until technician reports shortage.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="challenge-item">
-                                <div className="challenge-icon">
-                                    <i className="fas fa-calculator"></i>
-                                </div>
-                                <div className="challenge-content">
-                                    <h3>Manual Counting Errors</h3>
-                                    <ul>
-                                        <li>Spreadsheet-based tracking leads to inaccurate inventory counts.</li>
-                                        <li>Annual physical counts reveal significant discrepancies.</li>
-                                    </ul>
-                                </div>
+                            <div className="box-content">
+                                <h3>Real-Time Inventory Tracking</h3>
+                                <p>Track stock levels across multiple warehouses, trucks, and rig sites in real-time. Know exactly what you have and where it is instantly.</p>
                             </div>
                         </div>
-                    </section>
-
-                    <section className="how-platform-section">
-                        <h2>How Orriun Atlas Transforms Inventory Management</h2>
-                        <p className="section-description">
-                            Orriun Atlas provides end-to-end inventory visibility and control across your entire operation:
-                        </p>
-
-                        <div className="benefits-grid">
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-barcode"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Barcode and RFID Tracking</h3>
-                                    <ul>
-                                        <li>Scan parts for instant check-in/check-out and location updates.</li>
-                                        <li>Reduce counting errors and improve inventory accuracy to 99%+.</li>
-                                    </ul>
-                                </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-sync-alt" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
                             </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-exclamation-circle"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Automated Reorder Alerts</h3>
-                                    <ul>
-                                        <li>Smart par levels trigger automatic reorder notifications.</li>
-                                        <li>Never run out of critical parts with predictive demand planning.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-truck"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Mobile Truck Inventory</h3>
-                                    <ul>
-                                        <li>Track parts on every field service truck in real-time.</li>
-                                        <li>Technicians update inventory directly from mobile app during jobs.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-exchange-alt"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Transfer Management</h3>
-                                    <ul>
-                                        <li>Easy parts transfers between warehouses, trucks, and job sites.</li>
-                                        <li>Complete audit trail of all inventory movements.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-shopping-cart"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Vendor Integration</h3>
-                                    <ul>
-                                        <li>Connect directly with suppliers for streamlined ordering.</li>
-                                        <li>Compare pricing and availability across multiple vendors.</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div className="benefit-item">
-                                <div className="benefit-icon">
-                                    <i className="fas fa-chart-bar"></i>
-                                </div>
-                                <div className="benefit-content">
-                                    <h3>Usage Analytics</h3>
-                                    <ul>
-                                        <li>Track consumption patterns to optimize inventory levels.</li>
-                                        <li>Identify slow-moving items for liquidation or return.</li>
-                                    </ul>
-                                </div>
+                            <div className="box-content">
+                                <h3>Automated Reordering</h3>
+                                <p>Set minimum and maximum stock levels to trigger automatic purchase requisitions. Never run out of critical spares again.</p>
                             </div>
                         </div>
-                    </section>
+                    </div>
 
-                    <section className="why-choose-section">
-                        <h2>Why Choose Orriun Atlas for Inventory Management?</h2>
-                        <p className="section-description">
-                            Orriun Atlas delivers measurable improvements to inventory efficiency and cost control:
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-barcode" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Barcode & QR Code Scanning</h3>
+                                <p>Streamline check-in/check-out processes with mobile scanning. Eliminate manual data entry errors and speed up inventory audits.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-truck-loading" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Multi-Warehouse Management</h3>
+                                <p>Manage inventory across unlimited locations effortlessly. Transfer stock between sites with full audit trails and approval workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-clipboard-list" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Parts Usage Tracking</h3>
+                                <p>Link parts directly to work orders and assets. Track consumption history to forecast future needs and calculate accurate job costs.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-dollar-sign" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>First-In-First-Out (FIFO) Management</h3>
+                                <p>Minimize waste by using older stock first. Ensure optimal inventory turnover and reduce the risk of expired materials.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-puzzle-piece" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Comprehensive Integration</h3>
+                                <p>Seamlessly integrates with procurement, maintenance, and accounting modules for a unified view of your operations.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-mobile-alt" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Mobile Access</h3>
+                                <p>Give field techs the power to check stock availability and request parts directly from their mobile devices.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginTop: '40px', marginBottom: '20px' }}>Problems Orriun Atlas's Inventory and Parts Management Solves</h3>
+
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-boxes" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Stockouts and Overstocking</h3>
+                                <p>Struggle to find the right balance? Our analytics predict demand to keep inventory lean without risking operational availability.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-search-minus" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Lost or Misplaced Parts</h3>
+                                <p>Tired of parts disappearing? Detailed tracking history shows exactly who moved what and when, increasing accountability across the board.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-shipping-fast" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Inefficient Ordering</h3>
+                                <p>Relying on manual counts and spreadsheets leads to errors. Automate your purchasing workflow to save time and reduce mistakes.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-warehouse" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Disorganized Parts Storage</h3>
+                                <p>Messy warehouses slow down operations. Organize your inventory with precise bin locations and layout mapping.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-hand-holding-usd" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Financial Waste</h3>
+                                <p>Carrying excess inventory ties up capital. Optimize your stock levels to free up cash flow for other strategic investments.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-bullseye" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Inaccurate Data for Decision Making</h3>
+                                <p>Don't make blind decisions. Get precise, real-time inventory valuations and usage reports to drive smarter procurement strategies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style={{ fontSize: '24px', fontWeight: '700', color: 'var(--secondary-color)', marginTop: '40px', marginBottom: '20px' }}>Why Choose Orriun Atlas for Inventory and Parts Management?</h3>
+
+                    <div className="metary-feature-boxes">
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-eye" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Total Cost Visibility</h3>
+                                <p>Understand the true cost of your inventory, including holding costs, with detailed financial analytics.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-rocket" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Efficiency</h3>
+                                <p>Spend less time managing parts and more time getting the job done with streamlined digital workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-piggy-bank" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Cost Control</h3>
+                                <p>Reduce waste and prevent theft with strict access controls and digital sign-offs for high-value items.</p>
+                            </div>
+                        </div>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-chart-bar" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Scalability</h3>
+                                <p>Whether managing a single warehouse or regional hubs, Orriun Atlas scales seamlessly to meet your needs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="metary-feature-boxes" style={{ marginTop: '-20px' }}>
+                        <div className="metary-box scroll-animate" data-animate="fade-up">
+                            <div className="box-icon-wrapper">
+                                <i className="fas fa-link" style={{ fontSize: '40px', color: 'var(--primary-color)', margin: '20px' }}></i>
+                            </div>
+                            <div className="box-content">
+                                <h3>Integration</h3>
+                                <p>Seamlessly integrates with major ERP and accounting systems to ensure data consistency across your organization.</p>
+                            </div>
+                        </div>
+                        {/* Empty box for alignment if needed, or flex handles it */}
+                    </div>
+
+                    <div className="metary-text-content scroll-animate" data-animate="fade-up" style={{ marginTop: '40px' }}>
+                        <p>
+                            Orriun Atlas transforms inventory management from a headache into a competitive advantage. Ensure your team has the right tools for the job, every time, while keeping your bottom line healthy.
                         </p>
-                        <ul className="why-choose-list">
-                            <li>Reduce stockouts by 80% with intelligent reorder management.</li>
-                            <li>Decrease inventory carrying costs by 25% through optimization.</li>
-                            <li>Achieve 99%+ inventory accuracy with barcode/RFID tracking.</li>
-                            <li>Eliminate emergency procurement costs with predictive planning.</li>
-                            <li>Complete visibility across all locations including field trucks.</li>
-                        </ul>
-                    </section>
+                    </div>
+
+                    <div className="metary-checklist-section scroll-animate" data-animate="slide-up">
+                        <h3>Key Benefits Summary</h3>
+                        <div className="metary-checklist-grid">
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Optimize Stock Levels</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Reduce Carrying Costs</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Prevent Stockouts</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Streamline Procurement</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Warehouse Organization</div>
+                            <div className="check-item"><i className="fas fa-check check-icon"></i> Multi-Site Visibility</div>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>

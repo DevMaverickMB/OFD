@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 const ReviewsSection = ({
   reviews = [],
   autoRotate = true,
-  rotationInterval = 5000,
+  rotationInterval = 7000,
   className = ''
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

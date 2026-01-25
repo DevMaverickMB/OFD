@@ -43,7 +43,7 @@
   margin-bottom: 12px;
   transition: all 0.3s ease;
   font-weight: 600;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .sidebar-link:last-child {
@@ -54,7 +54,7 @@
   transform: translateY(-2px);
   color: var(--primary-color);
   padding-left: 25px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .sidebar-link.active {
@@ -105,7 +105,7 @@
   background: var(--white);
   color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .material-link i {
@@ -117,54 +117,224 @@
   color: var(--primary-color);
 }
 
+/* Main Content Styles */
+.industry-content {
+  flex: 1;
+}
+
+.promo-logo i {
+  font-size: 40px;
+  color: #fff;
+  display: none;
+}
+
+.promo-logo img {
+  width: 60%;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.promo-btn {
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+  color: var(--primary-color);
+  padding: 14px 30px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.promo-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 .sidebar-cta {
-  background: var(--secondary-color);
+  position: -webkit-sticky;
+  /* search compatibility */
+  position: sticky;
+  top: 25vh;
+  /* Center vertically in viewport approx */
+  z-index: 90;
+  /* High enough to stay above other content if needed */
+  background-color: var(--secondary-color);
+  background-size: cover;
+  background-position: center;
   color: var(--white);
-  padding: 40px 20px;
+  padding: 0;
   border-radius: var(--radius-md);
   text-align: center;
+  overflow: hidden;
+  min-height: 400px;
+  /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+/* If we want an overlay on the image part, we can add it, but design shows half/half */
+.sidebar-cta-image {
+  width: 100%;
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.sidebar-cta-content {
+  background: #111827;
+  /* Dark background matching reference */
+  padding: 30px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* To overlap the icon */
 }
 
 .cta-icon {
   width: 80px;
   height: 80px;
-  background: var(--white);
+  background: #F24C27;
+  /* Bright Orange from design */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 20px;
+  margin-top: -70px;
+  /* Pull it up to overlap boundary */
+  margin-bottom: 20px;
+  border: 5px solid #111827;
+  /* Match dark bg to create cutout effect */
 }
 
 .cta-icon i {
   font-size: 32px;
-  color: var(--secondary-color);
+  color: #fff;
 }
 
 .sidebar-cta h3 {
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 20px;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.3;
+  color: #fff;
 }
 
 .cta-phone {
   display: block;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--white);
+  font-size: 16px;
+  color: #fff;
   text-decoration: none;
-  margin-bottom: 8px;
-  transition: color 0.3s ease;
+  opacity: 0.9;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.cta-phone:hover {
-  color: var(--primary-color);
+.cta-email {
+  display: block;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-phone i,
+.cta-email i {
+  color: #fff;
+  /* Icons white */
+  font-size: 16px;
 }
 
 .cta-subtitle {
-  font-size: 14px;
-  opacity: 0.8;
+  display: none;
+  /* Removed as per requirement/design */
+}
+
+.sidebar-promo {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 30px;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80');
+}
+
+.sidebar-promo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+  z-index: 1;
+}
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.promo-logo {
+  width: 100px;
+  height: 100px;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.promo-logo i {
+  font-size: 40px;
+  color: #fff;
+}
+
+.sidebar-promo h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  text-transform: capitalize;
+}
+
+.sidebar-promo p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-weight: 500;
 }
 
 /* Main Content Styles */
@@ -205,7 +375,7 @@
 }
 
 .industry-intro .description {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
   color: var(--text-color);
 }
@@ -222,14 +392,23 @@
   font-size: 32px;
   color: var(--secondary-color);
   margin-bottom: 15px;
+  font-weight: 900;
+}
+
+.section-heading-dash::before {
+  content: "—";
+  color: var(--primary-color);
+  margin-right: 12px;
   font-weight: 700;
 }
 
 .section-description {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--text-color);
+  font-size: 18px !important;
+  line-height: 1.6;
+  color: #4a5568;
   margin-bottom: 35px;
+  max-width: 100%;
+  font-weight: 500;
 }
 
 .challenges-grid,
@@ -300,7 +479,7 @@
   padding-left: 30px;
 }
 
-.why-choose-list > li {
+.why-choose-list>li {
   font-size: 16px;
   line-height: 1.8;
   color: var(--text-color);
@@ -310,6 +489,161 @@
 .why-choose-list ul {
   margin-top: 10px;
   padding-left: 30px;
+}
+
+/* Feature Boxes - New Industry Style (Simulating MobileApp but subtle different) */
+.industry-feature-boxes {
+  display: flex;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.industry-box {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #E5E7EB;
+  padding: 30px;
+  border-radius: 12px;
+  display: block;
+  /* Changed from flex to block/relative for positioning */
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.industry-box:hover {
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(248, 181, 181, 0.1) 100%);
+  border-color: var(--primary-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--primary-color);
+  transform: translateY(-5px);
+}
+
+.industry-box-icon-wrapper {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: auto;
+  height: auto;
+  background: transparent;
+  display: block;
+  opacity: 0.1;
+  /* Increased opacity for visibility */
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.industry-box-icon-wrapper i {
+  font-size: 80px;
+  /* Covers >3/4th of left section */
+  color: var(--primary-color);
+}
+
+.industry-box:hover .industry-box-icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+  opacity: 0.15;
+}
+
+.industry-box:hover .industry-box-content h3 {
+  color: var(--primary-color);
+}
+
+.industry-box-content {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+.industry-box-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.industry-box-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 8px 0;
+  transition: color 0.3s ease;
+}
+
+.industry-box-content p:last-child {
+  margin-bottom: 0;
+}
+
+.industry-box-content ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.industry-box-content li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.industry-box:hover .industry-box-content p,
+.industry-box:hover .industry-box-content li {
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+/* Text content section */
+.metary-text-content {
+  margin: 30px 0;
+}
+
+.metary-text-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.metary-text-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Checklist Section - Update */
+.industry-checklist-section {
+  margin-top: 40px;
+  background: #F8FAFC;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+
+.industry-checklist-section h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 25px;
+}
+
+.industry-checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px 30px;
+}
+
+.industry-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.industry-check-item i {
+  color: var(--primary-color);
+  font-size: 16px;
+  margin-top: 3px;
 }
 
 /* Responsive Design */
@@ -326,8 +660,10 @@
   }
 
   .challenges-grid,
-  .benefits-grid {
+  .benefits-grid,
+  .industry-feature-boxes {
     grid-template-columns: 1fr;
+    flex-direction: column;
   }
 }
 
@@ -355,5 +691,8 @@
     flex-direction: column;
     padding: 20px;
   }
-}
 
+  .industry-checklist-grid {
+    grid-template-columns: 1fr;
+  }
+}
