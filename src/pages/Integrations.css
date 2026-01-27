@@ -120,6 +120,12 @@
   height: 65px;
 }
 
+.integration-icon img.logo-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .integration-icon i {
   font-size: 32px;
   font-weight: 800;

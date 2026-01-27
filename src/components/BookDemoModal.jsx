@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import './BookDemoModal.css';
 
 const BookDemoModal = ({ isOpen, onClose }) => {
     const [isLoading, setIsLoading] = useState(true);
-    const calUrl = 'https://cal.com/milind-bhushan-2oszyr/30min?embed=true&theme=light';
+    const calUrl = 'https://cal.com/dipak.delwadia/30min?embed=true&theme=light';
 
     // Close modal on Escape key
     useEffect(() => {
@@ -26,7 +27,7 @@ const BookDemoModal = ({ isOpen, onClose }) => {
 
     if (!isOpen) return null;
 
-    return (
+    return createPortal(
         <div className="book-demo-overlay" onClick={onClose}>
             <div className="book-demo-modal" onClick={(e) => e.stopPropagation()}>
                 <div className="book-demo-header">
@@ -50,9 +51,11 @@ const BookDemoModal = ({ isOpen, onClose }) => {
                         frameBorder="0"
                         allow="camera; microphone; autoplay; encrypted-media"
                     />
+                    <div className="cal-branding-cover"></div>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 

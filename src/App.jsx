@@ -51,7 +51,11 @@ function ScrollHandler() {
 
   useEffect(() => {
     // Scroll to top on route change
-    window.scrollTo(0, 0);
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0, 0: 0, behavior: 'instant' });
+    }
 
     // Small delay to ensure DOM is updated after route change
     const timeoutId = setTimeout(() => {
@@ -113,6 +117,7 @@ function App() {
       smoothTouch: false,
       touchMultiplier: 2,
     });
+    window.lenis = lenis;
 
     // Request animation frame loop
     function raf(time) {

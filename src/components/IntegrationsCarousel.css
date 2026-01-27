@@ -79,6 +79,14 @@
     /* Specific override for large logos */
 }
 
+.carousel-logo-container img.logo-full {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    /* Optional: if they are circular in the main page */
+}
+
 .carousel-logo-container i {
     font-size: 40px;
     color: #a0a0a0;

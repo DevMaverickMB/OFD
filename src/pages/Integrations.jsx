@@ -2,105 +2,26 @@ import PageBanner from '../components/PageBanner';
 import './Integrations.css';
 
 // Import integration logos
-import awsS3Logo from '../assets/Integrations-logos/amazon-s3.svg';
-import azureLogo from '../assets/Integrations-logos/azure-2.svg';
-import boxLogo from '../assets/Integrations-logos/box-39.svg';
-import dropboxLogo from '../assets/Integrations-logos/dropbox-2.svg';
-import easyClockingLogo from '../assets/Integrations-logos/easyclocking.png';
-import egnyteLogo from '../assets/Integrations-logos/egnyte.jpg';
-import ftpLogo from '../assets/Integrations-logos/ftp.jpg';
-import geoOpLogo from '../assets/Integrations-logos/GeoOp.jpg';
-import bigQueryLogo from '../assets/Integrations-logos/google-bigquery-logo-1.svg';
-import googleWorkspaceLogo from '../assets/Integrations-logos/google-g-2015.svg';
-import microsoft365Logo from '../assets/Integrations-logos/Microsoft-365.svg';
 import mondayLogo from '../assets/Integrations-logos/monday.png';
 import netsuiteLogo from '../assets/Integrations-logos/netsuite.svg';
-import paycomLogo from '../assets/Integrations-logos/paycom.png';
-import powerBiLogo from '../assets/Integrations-logos/power-bi.svg';
 import quickbooksLogo from '../assets/Integrations-logos/quickbooks-1.svg';
 import restApiLogo from '../assets/Integrations-logos/rest api.jpg';
 import samsaraLogo from '../assets/Integrations-logos/samsara.png';
-import sqlServerLogo from '../assets/Integrations-logos/microsoft-sql-server-1.svg';
 import twilioLogo from '../assets/Integrations-logos/twilio-2.svg';
+import acumaticaLogo from '../assets/Integrations-logos/acumatica-logo-stacked-light-2024 (1).png';
+import xeroLogo from '../assets/Integrations-logos/xero.svg';
+import geotabLogo from '../assets/Integrations-logos/geotab.png';
+import mtrackLogo from '../assets/Integrations-logos/mtrack.jpg';
+import cellcastLogo from '../assets/Integrations-logos/cellcast.jpg';
+import awsSnsLogo from '../assets/Integrations-logos/aws-sns.svg';
+import webhooksLogo from '../assets/Integrations-logos/webhooks.svg';
 
 const Integrations = () => {
   const integrations = [
     {
-      name: 'AWS S3',
-      logo: awsS3Logo,
-      description: 'Connect to Amazon S3 for secure cloud storage and data management.'
-    },
-    {
-      name: 'Azure Blob Storage',
-      logo: azureLogo,
-      description: 'Integrate with Microsoft Azure Blob Storage for scalable object storage.'
-    },
-    {
-      name: 'Box',
-      logo: boxLogo,
-      description: 'Sync and share files securely with Box cloud storage.'
-    },
-    {
-      name: 'Dropbox',
-      logo: dropboxLogo,
-      description: 'Collaborate and store files with Dropbox integration.'
-    },
-    {
-      name: 'EasyClocking',
-      logo: easyClockingLogo,
-      largeLogo: true,
-      description: 'Connect with EasyClocking for time attendance management.'
-    },
-    {
-      name: 'Egnyte',
-      logo: egnyteLogo,
-      description: 'Integrate with Egnyte for secure file sharing and storage.'
-    },
-    {
-      name: 'FTP',
-      logo: ftpLogo,
-      description: 'Connect via FTP for reliable file transfer operations.'
-    },
-    {
-      name: 'GeoOp',
-      logo: geoOpLogo,
-      largeLogo: true,
-      description: 'Integrate with GeoOp for field service management.'
-    },
-    {
-      name: 'Google BigQuery',
-      logo: bigQueryLogo,
-      description: 'Analyze massive datasets with Google BigQuery integration.'
-    },
-    {
-      name: 'Google Workspace',
-      logo: googleWorkspaceLogo,
-      description: 'Connect with Google Workspace for collaboration tools.'
-    },
-    {
-      name: 'Microsoft 365',
-      logo: microsoft365Logo,
-      description: 'Integrate with Microsoft 365 for productivity applications.'
-    },
-    {
-      name: 'Monday.com',
-      logo: mondayLogo,
-      description: 'Sync with Monday.com for project management and workflows.'
-    },
-    {
       name: 'NetSuite',
       logo: netsuiteLogo,
       description: 'Connect with NetSuite for ERP and business management.'
-    },
-    {
-      name: 'Paycom',
-      logo: paycomLogo,
-      description: 'Integrate with Paycom for payroll and HR management.'
-    },
-    {
-      name: 'Power BI',
-      logo: powerBiLogo,
-      description: 'Visualize data with Microsoft Power BI integration.'
     },
     {
       name: 'QuickBooks',
@@ -108,10 +29,19 @@ const Integrations = () => {
       description: 'Sync financial data with QuickBooks accounting software.'
     },
     {
-      name: 'REST APIs',
-      logo: restApiLogo,
-      largeLogo: true,
-      description: 'Connect custom applications using REST API endpoints.'
+      name: 'Monday',
+      logo: mondayLogo,
+      description: 'Sync with Monday.com for project management and workflows.'
+    },
+    {
+      name: 'Acumatica',
+      logo: acumaticaLogo,
+      description: 'Cloud ERP solution for business management.'
+    },
+    {
+      name: 'Xero',
+      logo: xeroLogo,
+      description: 'Online accounting software for your business.'
     },
     {
       name: 'Samsara',
@@ -120,10 +50,16 @@ const Integrations = () => {
       description: 'Integrate with Samsara for fleet and operations management.'
     },
     {
-      name: 'SQL Server',
-      logo: sqlServerLogo,
-      largeLogo: true,
-      description: 'Connect to SQL Server databases for data operations.'
+      name: 'GeoTab',
+      logo: geotabLogo,
+      fullSize: true,
+      description: 'Fleet management and vehicle tracking integration.'
+    },
+    {
+      name: 'MTrack',
+      logo: mtrackLogo,
+      fullSize: true,
+      description: 'Advanced tracking and fleet management solution.'
     },
     {
       name: 'Twilio',
@@ -131,10 +67,26 @@ const Integrations = () => {
       description: 'Enable SMS and communication features with Twilio.'
     },
     {
-      name: 'Custom',
-      logo: null,
-      icon: 'fas fa-puzzle-piece',
-      description: 'Build custom integrations tailored to your specific needs.'
+      name: 'CellCast',
+      logo: cellcastLogo,
+      fullSize: true,
+      description: 'Broadcast messaging and communication platform.'
+    },
+    {
+      name: 'AWS SNS',
+      logo: awsSnsLogo,
+      description: 'Amazon Simple Notification Service for pub/sub messaging.'
+    },
+    {
+      name: 'Rest APIs',
+      logo: restApiLogo,
+      largeLogo: true,
+      description: 'Connect custom applications using REST API endpoints.'
+    },
+    {
+      name: 'Webhooks',
+      logo: webhooksLogo,
+      description: 'Real-time data updates via automated webhooks.'
     }
   ];
 
@@ -170,7 +122,7 @@ const Integrations = () => {
                     <img
                       src={integration.logo}
                       alt={integration.name}
-                      className={integration.largeLogo ? 'logo-large' : ''}
+                      className={`${integration.largeLogo ? 'logo-large' : ''} ${integration.fullSize ? 'logo-full' : ''}`}
                     />
                   ) : (
                     <i className={integration.icon}></i>

@@ -303,6 +303,16 @@ const Home = () => {
     return () => clearTimeout(typeTimeout);
   }, []);
 
+  // Hero text animation
+  const [heroTextIndex, setHeroTextIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroTextIndex((prev) => (prev + 1) % 2);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="home-page">
       {/* Hero Section */}
@@ -320,11 +330,30 @@ const Home = () => {
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="hero-content">
-            <p className="hero-subtitle">FIELD OPERATIONS MANAGEMENT SYSTEM</p>
-            <h1>The intelligent <br /> operating system for <span className="hero-tomorrow">Oil and Gas</span></h1>
-            {/* <h4>Your New Ops Assistant</h4> */}
-            <Link to="/contact" className="btn-style1 hero-btn">
-              GET STARTED
+
+            <h1>
+              <div className="hero-text-transition scroll-animate" data-animate="slide-up">
+                <span className={`hero-text-slide ${heroTextIndex === 0 ? 'active' : 'inactive'}`}>
+                  The operating system powering modern
+                </span>
+                <span className={`hero-text-slide ${heroTextIndex === 1 ? 'active' : 'inactive'}`}>
+                  Run smarter, faster and safer
+                </span>
+              </div>
+              <span className="hero-tomorrow scroll-animate" data-animate="slide-up" data-delay="200">Oil & Gas Operations</span>
+            </h1>
+
+            <div className="hero-subheadline-transition scroll-animate" data-animate="slide-up" data-delay="400">
+              <p className={`hero-subheadline-slide ${heroTextIndex === 0 ? 'active' : 'inactive'}`}>
+                Manage field service, equipment rentals, workforce, and assets <br /> all from one intelligent platform.
+              </p>
+              <p className={`hero-subheadline-slide ${heroTextIndex === 1 ? 'active' : 'inactive'}`}>
+                A unified field operations and equipment rental platform built for <br /> real-world oilfield challenges.
+              </p>
+            </div>
+
+            <Link to="/contact" className="btn-style1 hero-btn scroll-animate" data-animate="slide-up" data-delay="600">
+              Let's Talk
             </Link>
           </div>
         </div>
